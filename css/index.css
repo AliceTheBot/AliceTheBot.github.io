@@ -1347,7 +1347,7 @@ canvas:not(#ribbon-canvas),
   --tab-button-active-bg: #fff;
   --card-bg: #fff;
   --sidebar-bg: #f6f8fa;
-  --btn-hover-color: #fdd70f;
+  --btn-hover-color: #c8b79b;
   --btn-color: #fff;
   --btn-bg: #49b202;
   --text-bg-hover: #49b202;
@@ -1369,7 +1369,7 @@ body {
   background: var(--global-bg);
   color: var(--font-color);
   font-size: var(--global-font-size);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Lato, Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Lato, Roboto, "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
   line-height: 2;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -1478,6 +1478,13 @@ a {
 }
 a:hover {
   color: #49b202;
+}
+#site-title,
+#site-subtitle,
+#site-name,
+#aside_content .author-info__name,
+#aside_content .author-info__description {
+  font-family: Titillium Web, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
 }
 .is-center {
   text-align: center;
@@ -1693,7 +1700,7 @@ blockquote footer cite:before {
 #article-container pre,
 #article-container code {
   font-size: 14px;
-  font-family: consolas, Menlo, 'PingFang SC', 'Microsoft YaHei', sans-serif !important;
+  font-family: consolas, Menlo, "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif !important;
 }
 #article-container code {
   padding: 0.1rem 0.2rem;
@@ -1846,7 +1853,7 @@ blockquote footer cite:before {
   font-size: 1.72em;
 }
 .article-sort-title:hover:before {
-  border-color: #fdd70f;
+  border-color: #c8b79b;
 }
 .article-sort-title:before {
   position: absolute;
@@ -1898,7 +1905,7 @@ blockquote footer cite:before {
   transition: all 0.2s ease-in-out;
 }
 .article-sort-item:hover:before {
-  border-color: #fdd70f;
+  border-color: #c8b79b;
 }
 .article-sort-item:before {
   position: absolute;
@@ -1928,7 +1935,7 @@ blockquote footer cite:before {
   border-color: #49b202;
 }
 .article-sort-item.year:before {
-  border-color: #fdd70f;
+  border-color: #c8b79b;
 }
 .article-sort-item-time {
   color: #858585;
@@ -2052,7 +2059,7 @@ blockquote footer cite:before {
   content: '';
 }
 #page .category-lists ul li:hover:before {
-  border-color: #fdd70f;
+  border-color: #c8b79b;
 }
 .layout {
   display: -webkit-box;
@@ -3118,7 +3125,7 @@ blockquote footer cite:before {
   transition: all 0.5s;
 }
 #page-header.full_page {
-  height: 100vh;
+  height: 500px;
   background-attachment: fixed;
 }
 #page-header.full_page #site-info {
@@ -3852,7 +3859,7 @@ _:future,
   padding: 0.2em 0.2em 0.2em 1.4em;
 }
 #article-container ul > li:not(.tab):hover:before {
-  border-color: #fdd70f;
+  border-color: #c8b79b;
 }
 #article-container ul > li:not(.tab):before {
   top: 0.78em;
