@@ -2,35 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2020/12/26/Hexo-Basic/</loc>
+    <loc>https://mayuri777.buzz/2020/12/26/Hexo-Basic/</loc>
     
     <lastmod>2021-01-02</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/categories/index.html</loc>
+    <loc>https://mayuri777.buzz/categories/index.html</loc>
     
     <lastmod>2020-12-26</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/tags/index.html</loc>
+    <loc>https://mayuri777.buzz/tags/index.html</loc>
     
     <lastmod>2020-12-26</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/about/index.html</loc>
+    <loc>https://mayuri777.buzz/about/index.html</loc>
     
     <lastmod>2020-12-26</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/2020/12/26/hello-world/</loc>
+    <loc>https://mayuri777.buzz/2020/12/26/hello-world/</loc>
     
     <lastmod>2020-12-25</lastmod>
     
@@ -38,7 +38,7 @@
   
 
   <url>
-    <loc>http://example.com/</loc>
+    <loc>https://mayuri777.buzz/</loc>
     <lastmod>2021-01-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -46,14 +46,14 @@
 
   
   <url>
-    <loc>http://example.com/tags/Hexo/</loc>
+    <loc>https://mayuri777.buzz/tags/Hexo/</loc>
     <lastmod>2021-01-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/Markdown/</loc>
+    <loc>https://mayuri777.buzz/tags/Markdown/</loc>
     <lastmod>2021-01-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -62,7 +62,7 @@
 
   
   <url>
-    <loc>http://example.com/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <loc>https://mayuri777.buzz/categories/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2021-01-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
