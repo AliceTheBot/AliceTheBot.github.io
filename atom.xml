@@ -6,7 +6,7 @@
   <link href="https://mayuri777.buzz/atom.xml" rel="self"/>
   
   <link href="https://mayuri777.buzz/"/>
-  <updated>2021-01-03T03:00:00.000Z</updated>
+  <updated>2021-01-04T14:02:06.783Z</updated>
   <id>https://mayuri777.buzz/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git 的简单入门</title>
+    <link href="https://mayuri777.buzz/2021/01/04/Git-Learning/"/>
+    <id>https://mayuri777.buzz/2021/01/04/Git-Learning/</id>
+    <published>2021-01-04T13:42:32.144Z</published>
+    <updated>2021-01-04T14:02:06.783Z</updated>
+    
+    
+    <summary type="html">小猴子🐒学 git</summary>
+    
+    
+    
+    <category term="技术" scheme="https://mayuri777.buzz/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="Git" scheme="https://mayuri777.buzz/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo 搭建博客的参考资料</title>

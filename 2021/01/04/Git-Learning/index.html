@@ -1,0 +1,313 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Git 的简单入门 | 笨蛋的小窝</title><meta name="keywords" content="Git"><meta name="author" content="笨蛋爱丽丝"><meta name="copyright" content="笨蛋爱丽丝"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="小猴子🐒学 git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 的简单入门">
+<meta property="og:url" content="https://mayuri777.buzz/2021/01/04/Git-Learning/index.html">
+<meta property="og:site_name" content="笨蛋的小窝">
+<meta property="og:description" content="小猴子🐒学 git">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://mayuri777.buzz/2021/01/04/Git-Learning/cover.jpg">
+<meta property="article:published_time" content="2021-01-04T13:42:32.144Z">
+<meta property="article:modified_time" content="2021-01-04T14:02:06.783Z">
+<meta property="article:author" content="笨蛋爱丽丝">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mayuri777.buzz/2021/01/04/Git-Learning/cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://mayuri777.buzz/2021/01/04/Git-Learning/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-01-04 22:02:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="笨蛋的小窝" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 存档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/2021/01/04/Git-Learning/cover.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">笨蛋的小窝</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 存档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Git 的简单入门</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-04T13:42:32.144Z" title="发表于 2021-01-04 21:42:32">2021-01-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-04T14:02:06.783Z" title="更新于 2021-01-04 22:02:06">2021-01-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>在使用 Hexo 搭建本博客的过程中已经使用过 Git，相信大家对它已不陌生。Git 是最常用的分布式版本控制工具，实际开发一般都会用到，所以很有必要学习。</p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Git 分为本地仓库(repository)和远程仓库(remote)，我们可以在本地和远程间提交和下载；本地仓库分为我们设置为仓库的文件夹——工作目录（Working Tree），因为并不一定每个文件都需要进行版本控制所以设置的缓冲区——索引，以及我们本地的版本库。</p>
+<p>每个版本只会存储我们进行的修改，而不是完整的文件。</p>
+<p>本文参考这个很棒的入门网站：<a target="_blank" rel="noopener" href="https://backlog.com/git-tutorial/cn">猴子都能懂的 GIT 入门</a></p>
+<h2 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h2><p>到<a target="_blank" rel="noopener" href="https://git-scm.com/">官网</a>下载 git 安装包，一路下一步即可</p>
+<h3 id="查看和修改用户名邮箱"><a href="#查看和修改用户名邮箱" class="headerlink" title="查看和修改用户名邮箱"></a>查看和修改用户名邮箱</h3><p>设置（修改）自己的用户名和邮箱</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;username&quot;</span><br><span class="line">git config --global user.email &quot;email&quot;</span><br></pre></td></tr></table></figure>
+<p>查看自己的用户名和邮箱</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/autoliuweijie/article/details/52230165">参考自本文</a></p>
+<h2 id="创建本地版本库-repository"><a href="#创建本地版本库-repository" class="headerlink" title="创建本地版本库 (repository)"></a>创建本地版本库 (repository)</h2><p>新建一个文件夹，双击进入，然后右键点击 <code>Git Bash Here</code> 打开命令行窗口</p>
+<p>输入 <code>git init</code> 初始化。</p>
+<p>随后我们会发现一个 <code>.git</code> 隐藏文件夹，这个就是我们创建的版本库，而存放版本库的文件夹称作工作目录（Working Tree）</p>
+<h2 id="提交修改"><a href="#提交修改" class="headerlink" title="提交修改"></a>提交修改</h2><h3 id="查看状态"><a href="#查看状态" class="headerlink" title="查看状态"></a>查看状态</h3><p>创建一个文件 <code>test.txt</code>, 执行如下命令查看工作树和索引的状态</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">On branch master</span><br><span class="line">Untracked files:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to include <span class="keyword">in</span> what will be committed)</span><br><span class="line">        monkey.txt</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span><br></pre></td></tr></table></figure>
+<p>提示有未提交到索引的文件</p>
+<h3 id="添加到索引"><a href="#添加到索引" class="headerlink" title="添加到索引"></a>添加到索引</h3><p>然后我们执行添加到索引命令</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add 文件名  # 添加单个文件到索引</span><br><span class="line">git add .  # 将工作目录下的所有文件添加到索引</span><br></pre></td></tr></table></figure>
+<p>随后再次查看 Git 的状态：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Changes to be committed:</span><br><span class="line">  (use &quot;git <span class="built_in">restore</span> --staged &lt;file&gt;...&quot; to unstage)</span><br><span class="line">        new file:   monkey.txt</span><br></pre></td></tr></table></figure>
+<p>提示索引中有未提交的修改</p>
+<h3 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h3><p>最后执行命令修改吧：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;注释&quot;</span><br></pre></td></tr></table></figure>
+<p>提交版本时添加注释是个好习惯哦（尽管 git 提交不加注释会报错）</p>
+<h2 id="远程仓库-Remote"><a href="#远程仓库-Remote" class="headerlink" title="远程仓库 Remote"></a>远程仓库 Remote</h2><h3 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h3><p>假如我们在 Github 创建了一个仓库，我们可以执行如下代码将该远程仓库添加到本地（要操作远程仓库，必须把SSH Keys 添加到 Github 的设置中，步骤参考<a target="_blank" rel="noopener" href="https://www.runoob.com/git/git-remote-repo.html">菜鸟教程</a>）</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add &lt;别名&gt; &lt;远程库的URL&gt;</span><br></pre></td></tr></table></figure>
+<p>添加以后，我们可以使用 <code>git remote</code> 查看远程仓库列表，以及使用 <code>git remote rm 名字</code> 移除远程仓库</p>
+<h3 id="推送到远程仓库-Push"><a href="#推送到远程仓库-Push" class="headerlink" title="推送到远程仓库 Push"></a>推送到远程仓库 Push</h3><p>好啦，既然我们有了远程仓库，那我们该怎样将自己本地仓库的内容上传，也就是推送上去呢。我们可以执行如下命令：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u &lt;仓库名&gt; &lt;分支名&gt;</span><br></pre></td></tr></table></figure>
+<p>仓库名，即我们刚才取的别名；分支名，默认为master；添加 -u 可以让我们下次推送时省略掉分支名</p>
+<p>刷新 Github 的页面，就可以看到与本地仓库相同的内容啦~</p>
+<h3 id="从远程仓库克隆-Clone"><a href="#从远程仓库克隆-Clone" class="headerlink" title="从远程仓库克隆 Clone"></a>从远程仓库克隆 Clone</h3><p>如果其他人想要将远程仓库复制到本地仓库，可以执行克隆命令：</p>
+<figure class="highlight bnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone <span class="attribute">&lt;仓库&gt;</span> <span class="attribute">&lt;目录&gt;</span></span><br></pre></td></tr></table></figure>
+<p>仓库可以使用我们之前获得的 URL，目录是我们想要防止版本库内容的地方</p>
+<p>执行后就可以在这个目录下找到我们刚才的文件啦</p>
+<h3 id="在克隆的仓库进行推送"><a href="#在克隆的仓库进行推送" class="headerlink" title="在克隆的仓库进行推送"></a>在克隆的仓库进行推送</h3><p>克隆后进行修改并提交后，我们可以直接 <code>git push</code> 到远程仓库，因为是 clone 的，所以可以省略仓库名和分支名</p>
+<h3 id="从远程数据库拉取内容-Pull"><a href="#从远程数据库拉取内容-Pull" class="headerlink" title="从远程数据库拉取内容 Pull"></a>从远程数据库拉取内容 Pull</h3><p>我们之前的本地仓库想要获取远程仓库最新的内容，可以使用拉取命令：</p>
+<figure class="highlight bnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull <span class="attribute">&lt;仓库名&gt;</span> <span class="attribute">&lt;分支名&gt;</span></span><br></pre></td></tr></table></figure>
+<p>省略仓库名会默认从 origin 仓库拉取</p>
+<p>然后我们使用 <code>git log</code> 查看提交日志，可以发现我们在克隆文件夹下提交的修改，而我们工作树中的对应文件也已经变成最新的内容了！</p>
+<h2 id="整合修改记录"><a href="#整合修改记录" class="headerlink" title="整合修改记录"></a>整合修改记录</h2><p>加入在我们 pull 之后 push 之前有人提交了其他的版本，那么我们进行 push 就会被拒绝 rejected（不然之前的修改就会丢失），如果我们想要提交，就需要 pull 并进行合并。</p>
+<p>Git 会为我们自动合并， 但也有必须手动合并的地方，如修改同一个地方。</p>
+<p>Git 会在发生冲突的地方修改文件内容，如下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;&gt;&gt;</span><br><span class="line">本地数据库的内容</span><br><span class="line">=====</span><br><span class="line">远程数据库的内容</span><br><span class="line">&lt;&lt;&lt;&lt;</span><br></pre></td></tr></table></figure>
+<p>修改所有冲突的地方再进行 push 即可</p>
+<p>我们可以使用 <code>git log --graph --oneline</code> 查看版本日志的流程图</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Git/">Git</a></div><div class="post_share"><div class="social-share" data-image="/2021/01/04/Git-Learning/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/12/26/Hexo-Basic/"><img class="next-cover" src="/2020/12/26/Hexo-Basic/cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hexo 搭建博客的参考资料</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Gitalk</span><span class="switch-btn"></span><span class="second-comment">Disqusjs</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">笨蛋爱丽丝</div><div class="author-info__description">笨蛋才更要努力阿</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/AliceTheBot"><i class="fab fa-github"></i><span>野生的章鱼猫出现了！</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/AliceTheBot" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-Git"><span class="toc-number">2.</span> <span class="toc-text">安装 Git</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%92%8C%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E5%90%8D%E9%82%AE%E7%AE%B1"><span class="toc-number">2.1.</span> <span class="toc-text">查看和修改用户名邮箱</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E7%89%88%E6%9C%AC%E5%BA%93-repository"><span class="toc-number">3.</span> <span class="toc-text">创建本地版本库 (repository)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E4%BF%AE%E6%94%B9"><span class="toc-number">4.</span> <span class="toc-text">提交修改</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81"><span class="toc-number">4.1.</span> <span class="toc-text">查看状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%88%B0%E7%B4%A2%E5%BC%95"><span class="toc-number">4.2.</span> <span class="toc-text">添加到索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4"><span class="toc-number">4.3.</span> <span class="toc-text">提交</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93-Remote"><span class="toc-number">5.</span> <span class="toc-text">远程仓库 Remote</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">5.1.</span> <span class="toc-text">添加远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93-Push"><span class="toc-number">5.2.</span> <span class="toc-text">推送到远程仓库 Push</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%85%8B%E9%9A%86-Clone"><span class="toc-number">5.3.</span> <span class="toc-text">从远程仓库克隆 Clone</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E5%85%8B%E9%9A%86%E7%9A%84%E4%BB%93%E5%BA%93%E8%BF%9B%E8%A1%8C%E6%8E%A8%E9%80%81"><span class="toc-number">5.4.</span> <span class="toc-text">在克隆的仓库进行推送</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E8%BF%9C%E7%A8%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8B%89%E5%8F%96%E5%86%85%E5%AE%B9-Pull"><span class="toc-number">5.5.</span> <span class="toc-text">从远程数据库拉取内容 Pull</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B4%E5%90%88%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95"><span class="toc-number">6.</span> <span class="toc-text">整合修改记录</span></a></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/01/04/Git-Learning/" title="Git 的简单入门"><img src="/2021/01/04/Git-Learning/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git 的简单入门"/></a><div class="content"><a class="title" href="/2021/01/04/Git-Learning/" title="Git 的简单入门">Git 的简单入门</a><time datetime="2021-01-04T13:42:32.144Z" title="发表于 2021-01-04 21:42:32">2021-01-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/26/Hexo-Basic/" title="Hexo 搭建博客的参考资料"><img src="/2020/12/26/Hexo-Basic/cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo 搭建博客的参考资料"/></a><div class="content"><a class="title" href="/2020/12/26/Hexo-Basic/" title="Hexo 搭建博客的参考资料">Hexo 搭建博客的参考资料</a><time datetime="2020-12-26T12:00:00.000Z" title="发表于 2020-12-26 20:00:00">2020-12-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/26/hello-world/" title="Markdown 基础语法"><img src="/2020/12/26/hello-world/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown 基础语法"/></a><div class="content"><a class="title" href="/2020/12/26/hello-world/" title="Markdown 基础语法">Markdown 基础语法</a><time datetime="2020-12-25T16:00:00.000Z" title="发表于 2020-12-26 00:00:00">2020-12-26</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By 笨蛋爱丽丝</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk({
+      clientID: 'a12e970e6a63cb9f7ff6',
+      clientSecret: '489786222367cc34f4ca1bf47ebb800b76585bcf',
+      repo: 'AliceTheBot.github.io',
+      owner: 'AliceTheBot',
+      admin: ['AliceTheBot'],
+      id: '7d8bf2112e69279b346cba46fd44b7f2',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    })
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script><script>function loadDisqusjs () {
+  function addDisqusjsCSS () {
+    const ele = document.createElement('link')
+    ele.rel = 'stylesheet'
+    ele.href= 'https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css'
+    document.getElementsByTagName('head')[0].appendChild(ele)
+  }
+
+  function initDisqusjs () {
+    window.DISQUS = null
+    new DisqusJS({
+      shortname: 'https-mayuri777-buzz',
+      siteName: 'https-mayuri777-buzz',
+      identifier: '2021/01/04/Git-Learning/',
+      url: 'https://mayuri777.buzz/2021/01/04/Git-Learning/',
+      title: 'Git 的简单入门',
+      api: 'https://disqus.com/api/',
+      apikey: 'asashlGb1cqPpsVHo57zPOOtE4dsYmhPgFRRBybUaLyjkekJleyRQT60ozGy16p3',
+      nocomment: '',
+      admin: '',
+      adminLabel: ''
+    });
+  }
+
+  window.disqusReset = initDisqusjs
+
+  if (window.disqusJsLoad) initDisqusjs()
+  else {
+    addDisqusjsCSS()
+    getScript('https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js').then(initDisqusjs)
+    window.disqusJsLoad = true
+  }
+}
+
+if ('Gitalk' === 'Disqusjs' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqusjs)
+  else loadDisqusjs()
+}
+else {
+  function loadOtherComment () {
+    loadDisqusjs()
+  }
+}
+
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script></div></body></html>
