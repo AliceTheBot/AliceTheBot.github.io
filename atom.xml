@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>笨蛋的小窝</title>
-  <icon>https://mayuri777.buzz/icon.png</icon>
+  <icon>https://alicethebot.github.io/icon.png</icon>
   
-  <link href="https://mayuri777.buzz/atom.xml" rel="self"/>
+  <link href="https://alicethebot.github.io/atom.xml" rel="self"/>
   
-  <link href="https://mayuri777.buzz/"/>
+  <link href="https://alicethebot.github.io/"/>
   <updated>2021-04-21T12:20:30.977Z</updated>
-  <id>https://mayuri777.buzz/</id>
+  <id>https://alicethebot.github.io/</id>
   
   <author>
     <name>笨蛋爱丽丝</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Mybatis Plus 入门教程分享</title>
-    <link href="https://mayuri777.buzz/2021/04/21/mybatis-plus-beginer/"/>
-    <id>https://mayuri777.buzz/2021/04/21/mybatis-plus-beginer/</id>
+    <link href="https://alicethebot.github.io/2021/04/21/mybatis-plus-beginer/"/>
+    <id>https://alicethebot.github.io/2021/04/21/mybatis-plus-beginer/</id>
     <published>2021-04-21T07:36:12.000Z</published>
     <updated>2021-04-21T12:20:30.977Z</updated>
     
@@ -34,17 +34,17 @@
     
     
     
-    <category term="技术" scheme="https://mayuri777.buzz/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://alicethebot.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="MybatisPlus" scheme="https://mayuri777.buzz/tags/MybatisPlus/"/>
+    <category term="MybatisPlus" scheme="https://alicethebot.github.io/tags/MybatisPlus/"/>
     
   </entry>
   
   <entry>
     <title>Git 的简单入门</title>
-    <link href="https://mayuri777.buzz/2021/01/04/Git-Learning/"/>
-    <id>https://mayuri777.buzz/2021/01/04/Git-Learning/</id>
+    <link href="https://alicethebot.github.io/2021/01/04/Git-Learning/"/>
+    <id>https://alicethebot.github.io/2021/01/04/Git-Learning/</id>
     <published>2021-01-04T13:42:32.144Z</published>
     <updated>2021-01-04T14:02:06.783Z</updated>
     
@@ -53,17 +53,17 @@
     
     
     
-    <category term="技术" scheme="https://mayuri777.buzz/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://alicethebot.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="Git" scheme="https://mayuri777.buzz/tags/Git/"/>
+    <category term="Git" scheme="https://alicethebot.github.io/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>Hexo 搭建博客的参考资料</title>
-    <link href="https://mayuri777.buzz/2020/12/26/Hexo-Basic/"/>
-    <id>https://mayuri777.buzz/2020/12/26/Hexo-Basic/</id>
+    <link href="https://alicethebot.github.io/2020/12/26/Hexo-Basic/"/>
+    <id>https://alicethebot.github.io/2020/12/26/Hexo-Basic/</id>
     <published>2020-12-26T12:00:00.000Z</published>
     <updated>2021-01-03T03:00:00.000Z</updated>
     
@@ -72,17 +72,17 @@
     
     
     
-    <category term="技术" scheme="https://mayuri777.buzz/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://alicethebot.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="Hexo" scheme="https://mayuri777.buzz/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://alicethebot.github.io/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Markdown 基础语法</title>
-    <link href="https://mayuri777.buzz/2020/12/26/hello-world/"/>
-    <id>https://mayuri777.buzz/2020/12/26/hello-world/</id>
+    <link href="https://alicethebot.github.io/2020/12/26/hello-world/"/>
+    <id>https://alicethebot.github.io/2020/12/26/hello-world/</id>
     <published>2020-12-25T16:00:00.000Z</published>
     <updated>2020-12-25T16:00:00.000Z</updated>
     
@@ -91,10 +91,10 @@
     
     
     
-    <category term="技术" scheme="https://mayuri777.buzz/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://alicethebot.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="Markdown" scheme="https://mayuri777.buzz/tags/Markdown/"/>
+    <category term="Markdown" scheme="https://alicethebot.github.io/tags/Markdown/"/>
     
   </entry>
   
