@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mayuri777.buzz/2021/04/21/mybatis-plus-beginer/</loc>
+    
+    <lastmod>2021-04-21</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://mayuri777.buzz/2021/01/04/Git-Learning/</loc>
     
     <lastmod>2021-01-04</lastmod>
@@ -46,7 +53,7 @@
 
   <url>
     <loc>https://mayuri777.buzz/</loc>
-    <lastmod>2021-01-04</lastmod>
+    <lastmod>2021-04-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -54,21 +61,28 @@
   
   <url>
     <loc>https://mayuri777.buzz/tags/Git/</loc>
-    <lastmod>2021-01-04</lastmod>
+    <lastmod>2021-04-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://mayuri777.buzz/tags/Hexo/</loc>
-    <lastmod>2021-01-04</lastmod>
+    <lastmod>2021-04-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://mayuri777.buzz/tags/Markdown/</loc>
-    <lastmod>2021-01-04</lastmod>
+    <lastmod>2021-04-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mayuri777.buzz/tags/MybatisPlus/</loc>
+    <lastmod>2021-04-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -77,7 +91,7 @@
   
   <url>
     <loc>https://mayuri777.buzz/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2021-01-04</lastmod>
+    <lastmod>2021-04-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

@@ -6,7 +6,7 @@
   <link href="https://mayuri777.buzz/atom.xml" rel="self"/>
   
   <link href="https://mayuri777.buzz/"/>
-  <updated>2021-01-04T14:02:06.783Z</updated>
+  <updated>2021-04-21T12:17:12.703Z</updated>
   <id>https://mayuri777.buzz/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mybatis Plus 入门教程分享</title>
+    <link href="https://mayuri777.buzz/2021/04/21/mybatis-plus-beginer/"/>
+    <id>https://mayuri777.buzz/2021/04/21/mybatis-plus-beginer/</id>
+    <published>2021-04-21T07:36:12.000Z</published>
+    <updated>2021-04-21T12:17:12.703Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;入门良品（基于 spring xml 配置）：&lt;br&gt;&lt;a href=&quot;https://www.jianshu.com/p/ceb1df475021&quot;&gt;https://www.jianshu.com/p/ceb1df475021&lt;/a&gt;&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://mayuri777.buzz/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="MybatisPlus" scheme="https://mayuri777.buzz/tags/MybatisPlus/"/>
+    
+  </entry>
   
   <entry>
     <title>Git 的简单入门</title>
