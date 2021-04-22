@@ -6,22 +6,48 @@
   <link href="https://alicethebot.github.io/atom.xml" rel="self"/>
   
   <link href="https://alicethebot.github.io/"/>
-  <updated>2021-04-21T12:20:30.977Z</updated>
+  <updated>2021-04-22T06:34:14.548Z</updated>
   <id>https://alicethebot.github.io/</id>
   
   <author>
-    <name>笨蛋爱丽丝</name>
+    <name>Alice</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>SpringCloud 入门资料</title>
+    <link href="https://alicethebot.github.io/2021/04/22/Spring-Cloud-Beginner/"/>
+    <id>https://alicethebot.github.io/2021/04/22/Spring-Cloud-Beginner/</id>
+    <published>2021-04-22T02:09:37.000Z</published>
+    <updated>2021-04-22T06:34:14.548Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;这个2020年的，相对新一点 &lt;a href=&quot;https://juejin.cn/post/6869264020205993997&quot;&gt;写给小白看的Spring</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://alicethebot.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="SpringCloud" scheme="https://alicethebot.github.io/tags/SpringCloud/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Mybatis Plus 入门教程分享</title>
     <link href="https://alicethebot.github.io/2021/04/21/mybatis-plus-beginer/"/>
     <id>https://alicethebot.github.io/2021/04/21/mybatis-plus-beginer/</id>
     <published>2021-04-21T07:36:12.000Z</published>
-    <updated>2021-04-21T12:20:30.977Z</updated>
+    <updated>2021-04-22T02:48:03.552Z</updated>
     
     
       
@@ -46,10 +72,19 @@
     <link href="https://alicethebot.github.io/2021/01/04/Git-Learning/"/>
     <id>https://alicethebot.github.io/2021/01/04/Git-Learning/</id>
     <published>2021-01-04T13:42:32.144Z</published>
-    <updated>2021-01-04T14:02:06.783Z</updated>
+    <updated>2021-04-22T02:33:39.336Z</updated>
     
     
-    <summary type="html">小猴子🐒学 git</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;在使用 Hexo 搭建本博客的过程中已经使用过 Git，相信大家对它已不陌生。Git 是最常用的分布式版本控制工具，实际开发一般都会用到，所以很有必要学习。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot;</summary>
+        
+      
     
     
     
