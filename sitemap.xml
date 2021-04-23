@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://alicethebot.github.io/2021/04/23/Down-the-Rabbit-Hole/</loc>
+    
+    <lastmod>2021-04-23</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://alicethebot.github.io/2021/04/22/Spring-Cloud-Beginner/</loc>
     
-    <lastmod>2021-04-22</lastmod>
+    <lastmod>2021-04-23</lastmod>
     
   </url>
   
@@ -68,6 +75,13 @@
   
   <url>
     <loc>https://alicethebot.github.io/tags/Git/</loc>
+    <lastmod>2021-04-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://alicethebot.github.io/tags/%E5%9F%9F%E5%90%8D/</loc>
     <lastmod>2021-04-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
