@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>笨蛋的小窝</title>
-  <icon>https://alicethebot.github.io/icon.png</icon>
+  <icon>https://rabbit-hole.top/icon.png</icon>
   
-  <link href="https://alicethebot.github.io/atom.xml" rel="self"/>
+  <link href="https://rabbit-hole.top/atom.xml" rel="self"/>
   
-  <link href="https://alicethebot.github.io/"/>
-  <updated>2021-04-23T13:43:27.915Z</updated>
-  <id>https://alicethebot.github.io/</id>
+  <link href="https://rabbit-hole.top/"/>
+  <updated>2021-04-29T14:44:39.158Z</updated>
+  <id>https://rabbit-hole.top/</id>
   
   <author>
     <name>Alice</name>
@@ -17,9 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>修改 Mysql 登录密码</title>
+    <link href="https://rabbit-hole.top/2021/04/29/Mysql-Change-Pwd/"/>
+    <id>https://rabbit-hole.top/2021/04/29/Mysql-Change-Pwd/</id>
+    <published>2021-04-29T09:14:21.000Z</published>
+    <updated>2021-04-29T14:44:39.158Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;修改-Mysql-用户登录密码&quot;&gt;&lt;a href=&quot;#修改-Mysql-用户登录密码&quot; class=&quot;headerlink&quot; title=&quot;修改 Mysql 用户登录密码&quot;&gt;&lt;/a&gt;修改 Mysql 用户登录密码&lt;/h2&gt;&lt;h3 id=&quot;方法一（推荐）&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://rabbit-hole.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="MySQL" scheme="https://rabbit-hole.top/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Down the Rabbit Hole!</title>
-    <link href="https://alicethebot.github.io/2021/04/23/Down-the-Rabbit-Hole/"/>
-    <id>https://alicethebot.github.io/2021/04/23/Down-the-Rabbit-Hole/</id>
+    <link href="https://rabbit-hole.top/2021/04/23/Down-the-Rabbit-Hole/"/>
+    <id>https://rabbit-hole.top/2021/04/23/Down-the-Rabbit-Hole/</id>
     <published>2021-04-23T12:38:52.000Z</published>
     <updated>2021-04-23T13:43:27.915Z</updated>
     
@@ -28,17 +53,17 @@
     
     
     
-    <category term="技术" scheme="https://alicethebot.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://rabbit-hole.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="域名" scheme="https://alicethebot.github.io/tags/%E5%9F%9F%E5%90%8D/"/>
+    <category term="域名" scheme="https://rabbit-hole.top/tags/%E5%9F%9F%E5%90%8D/"/>
     
   </entry>
   
   <entry>
     <title>SpringCloud 入门资料</title>
-    <link href="https://alicethebot.github.io/2021/04/22/Spring-Cloud-Beginner/"/>
-    <id>https://alicethebot.github.io/2021/04/22/Spring-Cloud-Beginner/</id>
+    <link href="https://rabbit-hole.top/2021/04/22/Spring-Cloud-Beginner/"/>
+    <id>https://rabbit-hole.top/2021/04/22/Spring-Cloud-Beginner/</id>
     <published>2021-04-22T02:09:37.000Z</published>
     <updated>2021-04-23T05:41:52.241Z</updated>
     
@@ -56,17 +81,17 @@
     
     
     
-    <category term="技术" scheme="https://alicethebot.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://rabbit-hole.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="SpringCloud" scheme="https://alicethebot.github.io/tags/SpringCloud/"/>
+    <category term="SpringCloud" scheme="https://rabbit-hole.top/tags/SpringCloud/"/>
     
   </entry>
   
   <entry>
     <title>Mybatis Plus 入门教程分享</title>
-    <link href="https://alicethebot.github.io/2021/04/21/mybatis-plus-beginer/"/>
-    <id>https://alicethebot.github.io/2021/04/21/mybatis-plus-beginer/</id>
+    <link href="https://rabbit-hole.top/2021/04/21/mybatis-plus-beginer/"/>
+    <id>https://rabbit-hole.top/2021/04/21/mybatis-plus-beginer/</id>
     <published>2021-04-21T07:36:12.000Z</published>
     <updated>2021-04-22T02:48:03.552Z</updated>
     
@@ -81,19 +106,19 @@
     
     
     
-    <category term="技术" scheme="https://alicethebot.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://rabbit-hole.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="MybatisPlus" scheme="https://alicethebot.github.io/tags/MybatisPlus/"/>
+    <category term="MybatisPlus" scheme="https://rabbit-hole.top/tags/MybatisPlus/"/>
     
   </entry>
   
   <entry>
-    <title>Git 的简单入门</title>
-    <link href="https://alicethebot.github.io/2021/01/04/Git-Learning/"/>
-    <id>https://alicethebot.github.io/2021/01/04/Git-Learning/</id>
+    <title>Git 学习笔记</title>
+    <link href="https://rabbit-hole.top/2021/01/04/Git-Learning/"/>
+    <id>https://rabbit-hole.top/2021/01/04/Git-Learning/</id>
     <published>2021-01-04T13:42:32.144Z</published>
-    <updated>2021-04-22T02:33:39.336Z</updated>
+    <updated>2021-04-30T02:43:27.481Z</updated>
     
     
       
@@ -101,25 +126,26 @@
         
         
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;在使用 Hexo 搭建本博客的过程中已经使用过 Git，相信大家对它已不陌生。Git 是最常用的分布式版本控制工具，实际开发一般都会用到，所以很有必要学习。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot;</summary>
+&lt;p&gt;本文系如下两篇入门教程的学习笔记 &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://backlog.com/git-tutorial/cn&quot;&gt;猴子都能懂的 GIT 入门&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a</summary>
         
       
     
     
     
-    <category term="技术" scheme="https://alicethebot.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://rabbit-hole.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="Git" scheme="https://alicethebot.github.io/tags/Git/"/>
+    <category term="Git" scheme="https://rabbit-hole.top/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>Hexo 搭建博客的参考资料</title>
-    <link href="https://alicethebot.github.io/2020/12/26/Hexo-Basic/"/>
-    <id>https://alicethebot.github.io/2020/12/26/Hexo-Basic/</id>
+    <link href="https://rabbit-hole.top/2020/12/26/Hexo-Basic/"/>
+    <id>https://rabbit-hole.top/2020/12/26/Hexo-Basic/</id>
     <published>2020-12-26T12:00:00.000Z</published>
     <updated>2021-01-03T03:00:00.000Z</updated>
     
@@ -128,17 +154,17 @@
     
     
     
-    <category term="技术" scheme="https://alicethebot.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://rabbit-hole.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="Hexo" scheme="https://alicethebot.github.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://rabbit-hole.top/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Markdown 基础语法</title>
-    <link href="https://alicethebot.github.io/2020/12/26/hello-world/"/>
-    <id>https://alicethebot.github.io/2020/12/26/hello-world/</id>
+    <link href="https://rabbit-hole.top/2020/12/26/hello-world/"/>
+    <id>https://rabbit-hole.top/2020/12/26/hello-world/</id>
     <published>2020-12-25T16:00:00.000Z</published>
     <updated>2020-12-25T16:00:00.000Z</updated>
     
@@ -147,10 +173,10 @@
     
     
     
-    <category term="技术" scheme="https://alicethebot.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://rabbit-hole.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="Markdown" scheme="https://alicethebot.github.io/tags/Markdown/"/>
+    <category term="Markdown" scheme="https://rabbit-hole.top/tags/Markdown/"/>
     
   </entry>
   

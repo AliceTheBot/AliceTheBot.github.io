@@ -2,63 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://alicethebot.github.io/2021/04/23/Down-the-Rabbit-Hole/</loc>
+    <loc>https://rabbit-hole.top/2021/01/04/Git-Learning/</loc>
+    
+    <lastmod>2021-04-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://rabbit-hole.top/2021/04/29/Mysql-Change-Pwd/</loc>
+    
+    <lastmod>2021-04-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://rabbit-hole.top/2021/04/23/Down-the-Rabbit-Hole/</loc>
     
     <lastmod>2021-04-23</lastmod>
     
   </url>
   
   <url>
-    <loc>https://alicethebot.github.io/2021/04/22/Spring-Cloud-Beginner/</loc>
+    <loc>https://rabbit-hole.top/2021/04/22/Spring-Cloud-Beginner/</loc>
     
     <lastmod>2021-04-23</lastmod>
     
   </url>
   
   <url>
-    <loc>https://alicethebot.github.io/2021/04/21/mybatis-plus-beginer/</loc>
+    <loc>https://rabbit-hole.top/2021/04/21/mybatis-plus-beginer/</loc>
     
     <lastmod>2021-04-22</lastmod>
     
   </url>
   
   <url>
-    <loc>https://alicethebot.github.io/2021/01/04/Git-Learning/</loc>
-    
-    <lastmod>2021-04-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://alicethebot.github.io/2020/12/26/Hexo-Basic/</loc>
+    <loc>https://rabbit-hole.top/2020/12/26/Hexo-Basic/</loc>
     
     <lastmod>2021-01-03</lastmod>
     
   </url>
   
   <url>
-    <loc>https://alicethebot.github.io/categories/index.html</loc>
+    <loc>https://rabbit-hole.top/categories/index.html</loc>
     
     <lastmod>2020-12-26</lastmod>
     
   </url>
   
   <url>
-    <loc>https://alicethebot.github.io/tags/index.html</loc>
+    <loc>https://rabbit-hole.top/tags/index.html</loc>
     
     <lastmod>2020-12-26</lastmod>
     
   </url>
   
   <url>
-    <loc>https://alicethebot.github.io/about/index.html</loc>
+    <loc>https://rabbit-hole.top/about/index.html</loc>
     
     <lastmod>2020-12-26</lastmod>
     
   </url>
   
   <url>
-    <loc>https://alicethebot.github.io/2020/12/26/hello-world/</loc>
+    <loc>https://rabbit-hole.top/2020/12/26/hello-world/</loc>
     
     <lastmod>2020-12-25</lastmod>
     
@@ -66,51 +73,58 @@
   
 
   <url>
-    <loc>https://alicethebot.github.io/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <loc>https://rabbit-hole.top/</loc>
+    <lastmod>2021-04-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://alicethebot.github.io/tags/Git/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <loc>https://rabbit-hole.top/tags/%E5%9F%9F%E5%90%8D/</loc>
+    <lastmod>2021-04-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://alicethebot.github.io/tags/%E5%9F%9F%E5%90%8D/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <loc>https://rabbit-hole.top/tags/Git/</loc>
+    <lastmod>2021-04-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://alicethebot.github.io/tags/Hexo/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <loc>https://rabbit-hole.top/tags/MySQL/</loc>
+    <lastmod>2021-04-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://alicethebot.github.io/tags/SpringCloud/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <loc>https://rabbit-hole.top/tags/Hexo/</loc>
+    <lastmod>2021-04-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://alicethebot.github.io/tags/Markdown/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <loc>https://rabbit-hole.top/tags/SpringCloud/</loc>
+    <lastmod>2021-04-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://alicethebot.github.io/tags/MybatisPlus/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <loc>https://rabbit-hole.top/tags/Markdown/</loc>
+    <lastmod>2021-04-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://rabbit-hole.top/tags/MybatisPlus/</loc>
+    <lastmod>2021-04-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -118,8 +132,8 @@
 
   
   <url>
-    <loc>https://alicethebot.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2021-04-23</lastmod>
+    <loc>https://rabbit-hole.top/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2021-04-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
