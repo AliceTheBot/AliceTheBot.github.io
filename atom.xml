@@ -18,8 +18,8 @@
   
   <entry>
     <title>TIL 修改图片扩展名并没有改变文件格式</title>
-    <link href="https://rabbit-hole.top/2021/11/01/TIL-Change-Filename-Extension-Dont-Change-Its-Real-Format/"/>
-    <id>https://rabbit-hole.top/2021/11/01/TIL-Change-Filename-Extension-Dont-Change-Its-Real-Format/</id>
+    <link href="https://rabbit-hole.top/2021/11/01/TIL-Change-Filename-Extension/"/>
+    <id>https://rabbit-hole.top/2021/11/01/TIL-Change-Filename-Extension/</id>
     <published>2021-11-01T09:44:34.000Z</published>
     <updated>2021-11-01T10:13:28.335Z</updated>
     
@@ -72,10 +72,16 @@
     <link href="https://rabbit-hole.top/2021/01/04/Git-Learning/"/>
     <id>https://rabbit-hole.top/2021/01/04/Git-Learning/</id>
     <published>2021-01-04T13:42:32.144Z</published>
-    <updated>2021-11-01T09:17:24.015Z</updated>
+    <updated>2021-11-02T01:45:17.794Z</updated>
     
     
-    <summary type="html">基本语法</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文系如下两篇入门教程的学习笔记 &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://backlog.com/git-tutorial/cn&quot;&gt;猴子都能懂的 GIT 入门&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/896043488029600&quot;&gt;廖雪峰的Git教程&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;</summary>
     
     
     
@@ -91,10 +97,15 @@
     <link href="https://rabbit-hole.top/2020/12/26/Hexo-Basic/"/>
     <id>https://rabbit-hole.top/2020/12/26/Hexo-Basic/</id>
     <published>2020-12-26T12:00:00.000Z</published>
-    <updated>2021-05-11T15:35:33.178Z</updated>
+    <updated>2021-11-02T01:43:22.761Z</updated>
     
     
-    <summary type="html">感谢前辈们为后人踩出的路~</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Hexo 生成的是静态文件，不需要数据库和应用服务器跑后端程序，直接部署到 Github Page 上，连购买和维护服务器都可以不做，所以入门门槛低，也可以将集中精力于撰写博客，很适合像爱丽丝这样的建站小白和精力有限的人(☞ﾟヮﾟ)☞&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本来想详细写写自己搭建的过程，但一来自己搭建中没有任何记录（爱丽丝笨蛋！笨蛋！），二来本来就是按照前辈们的教程做的，写出来也只是东拼西凑的百家饭而已，食之无味弃之可惜，三来是爱丽丝太懒了（这才不是主要原因呢ヽ(*。&amp;gt;Д&amp;lt;)o゜），所以干脆把自己参考的博客简单整理出来了，前面的这一点是爱丽丝之前写好的，暂时留下当个纪念吧&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
     
     
     
@@ -113,7 +124,14 @@
     <updated>2020-12-25T16:00:00.000Z</updated>
     
     
-    <summary type="html">一些Markdown基本语法</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;code&gt;# 标题&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&quot;摩西摩西&quot;&gt;&lt;a href=&quot;#摩西摩西&quot; class=&quot;headerlink&quot;</summary>
+        
+      
     
     
     

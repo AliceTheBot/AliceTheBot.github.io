@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="文件格式," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -81,20 +81,17 @@
 
 
 
-<meta name="description" content="因为上传证件照需要用jpg格式，本地的图片为png格式，直接用文件管理器修改扩展名，提交和查看都没问题，但是是否真的已经修改了图片格式呢？ 根据这篇回答所言，其实扩展名只是个代号（就像 Linux 没有 WIN 平台的扩展名机制一样）,在文件的开头标示了文件的类型，还有尺寸、色彩类型等信息，图片查看器也会根据这个判断格式，而不仅是扩展名。  视频大概同类？">
-<meta property="og:type" content="article">
-<meta property="og:title" content="TIL 修改图片扩展名并没有改变文件格式">
-<meta property="og:url" content="https://rabbit-hole.top/2021/11/01/TIL-Change-Filename-Extension-Dont-Change-Its-Real-Format/index.html">
+<meta name="description" content="td,th{     text-align:center;   }                   作品名       状态       链接                        贾希大人不气馁       观看中       MyAnimeList                 无职转生       观看中       MyAnimeList">
+<meta property="og:type" content="website">
+<meta property="og:title" content="追番列表">
+<meta property="og:url" content="https://rabbit-hole.top/animeList/index.html">
 <meta property="og:site_name" content="废纸篓">
-<meta property="og:description" content="因为上传证件照需要用jpg格式，本地的图片为png格式，直接用文件管理器修改扩展名，提交和查看都没问题，但是是否真的已经修改了图片格式呢？ 根据这篇回答所言，其实扩展名只是个代号（就像 Linux 没有 WIN 平台的扩展名机制一样）,在文件的开头标示了文件的类型，还有尺寸、色彩类型等信息，图片查看器也会根据这个判断格式，而不仅是扩展名。  视频大概同类？">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pic1.zhimg.com/a4065faaa135482afec1728695ce22ed_r.jpg?source=1940ef5c">
-<meta property="article:published_time" content="2021-11-01T09:44:34.000Z">
-<meta property="article:modified_time" content="2021-11-01T10:13:28.335Z">
+<meta property="og:description" content="td,th{     text-align:center;   }                   作品名       状态       链接                        贾希大人不气馁       观看中       MyAnimeList                 无职转生       观看中       MyAnimeList">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-11-02T01:59:05.000Z">
+<meta property="article:modified_time" content="2021-11-02T02:57:38.100Z">
 <meta property="article:author" content="Trash Producer">
-<meta property="article:tag" content="文件格式">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://pic1.zhimg.com/a4065faaa135482afec1728695ce22ed_r.jpg?source=1940ef5c">
 
 
 
@@ -110,7 +107,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -124,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://rabbit-hole.top/2021/11/01/TIL-Change-Filename-Extension-Dont-Change-Its-Real-Format/"/>
+  <link rel="canonical" href="https://rabbit-hole.top/animeList/"/>
 
 
 
 
 
-  <title>TIL 修改图片扩展名并没有改变文件格式 | 废纸篓</title>
+  <title>追番列表 | 废纸篓</title>
   
 
 
@@ -142,7 +139,7 @@
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -190,27 +187,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            Categories
+            首页
           </a>
         </li>
       
@@ -220,7 +197,17 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-animelist">
+          <a href="/animeList" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th-list"></i> <br />
+            
+            追番列表
           </a>
         </li>
       
@@ -245,169 +232,60 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://rabbit-hole.top/2021/11/01/TIL-Change-Filename-Extension-Dont-Change-Its-Real-Format/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="废纸篓">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">TIL 修改图片扩展名并没有改变文件格式</h1>
-        
+	<h1 class="post-title" itemprop="name headline">追番列表</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-11-01T17:44:34+08:00">
-                2021-11-01
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Today-I-Learned/" itemprop="url" rel="index">
-                    <span itemprop="name">Today I Learned</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <p>因为上传证件照需要用jpg格式，本地的图片为png格式，直接用文件管理器修改扩展名，提交和查看都没问题，但是是否真的已经修改了图片格式呢？</p>
-<p>根据<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/28161418">这篇回答</a>所言，其实扩展名只是个代号（就像 Linux 没有 WIN 平台的扩展名机制一样）,在文件的开头标示了文件的类型，还有尺寸、色彩类型等信息，图片查看器也会根据这个判断格式，而不仅是扩展名。</p>
-<p><img src="https://pic1.zhimg.com/a4065faaa135482afec1728695ce22ed_r.jpg?source=1940ef5c" alt="回答中的配图"></p>
-<p>视频大概同类？</p>
+      <div class="post-body">
+        
+        
+          <style>
+  td,th{
+    text-align:center;
+  }
+</style>
 
+<table>
+  <thead> 
+    <tr>
+      <th>作品名</th>
+      <th>状态</th>
+      <th>链接</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>贾希大人不气馁</td>
+      <td><font color="green">观看中</font></td>
+      <td><a target="_blank" rel="noopener" href="https://myanimelist.net/anime/48753/Jahy-sama_wa_Kujikenai">MyAnimeList</a></td>
+    </tr>
+    <tr>
+      <td>无职转生</td>
+      <td><font color="green">观看中</font></td>
+      <td><a target="_blank" rel="noopener" href="https://myanimelist.net/anime/45576/Mushoku_Tensei__Isekai_Ittara_Honki_Dasu_Part_2">MyAnimeList</a></td>
+    </tr>
+  </tbody>
+</table>
+        
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/" rel="tag"># 文件格式</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2021/04/29/Mysql-Change-Pwd/" rel="next" title="修改 Mysql 登录密码">
-                <i class="fa fa-chevron-left"></i> 修改 Mysql 登录密码
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
@@ -457,7 +335,7 @@
                 <a href="/archives%7C%7Carchive">
               
                   <span class="site-state-item-count">5</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -468,7 +346,7 @@
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
                   <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">categories</span>
+                  <span class="site-state-item-name">分类</span>
                 </a>
               </div>
             
@@ -479,7 +357,7 @@
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">5</span>
-                  <span class="site-state-item-name">tags</span>
+                  <span class="site-state-item-name">标签</span>
                 </a>
               </div>
             
@@ -532,7 +410,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -540,7 +418,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
