@@ -6,7 +6,7 @@
   <link href="https://rabbit-hole.top/atom.xml" rel="self"/>
   
   <link href="https://rabbit-hole.top/"/>
-  <updated>2021-11-01T10:13:28.335Z</updated>
+  <updated>2021-11-01T16:00:00.000Z</updated>
   <id>https://rabbit-hole.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>马克思主义有感</title>
+    <link href="https://rabbit-hole.top/2021/11/02/About-Marxism/"/>
+    <id>https://rabbit-hole.top/2021/11/02/About-Marxism/</id>
+    <published>2021-11-01T16:00:00.000Z</published>
+    <updated>2021-11-01T16:00:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;记得罗素曾经讨论过物质是不是存在的，经过一通论证之后，坦白自己也没有答案。然后罗素提出了一个观点：人有先天的倾向，认为物质是存在的。在我看来这是一种非常实用主义的想法，但确实符合一般的生活经验，毕竟人饿了会吃东西，要找到食物需要狩猎采集或者耕种，贯彻唯心主义的人恐怕无法存活</summary>
+        
+      
+    
+    
+    
+    <category term="一派胡盐" scheme="https://rabbit-hole.top/categories/%E4%B8%80%E6%B4%BE%E8%83%A1%E7%9B%90/"/>
+    
+    
+    <category term="马克思" scheme="https://rabbit-hole.top/tags/%E9%A9%AC%E5%85%8B%E6%80%9D/"/>
+    
+  </entry>
   
   <entry>
     <title>TIL 修改图片扩展名并没有改变文件格式</title>
