@@ -27,25 +27,25 @@
 <meta property="og:site_name" content="废纸篓">
 <meta property="og:description" content="Hexo 生成的是静态文件，不需要数据库和应用服务器跑后端程序，直接部署到 Github Page 上，连购买和维护服务器都可以不做，所以入门门槛低，也可以将集中精力于撰写博客，很适合像爱丽丝这样的建站小白和精力有限的人(☞ﾟヮﾟ)☞   本来想详细写写自己搭建的过程，但一来自己搭建中没有任何记录（爱丽丝笨蛋！笨蛋！），二来本来就是按照前辈们的教程做的，写出来也只是东拼西凑的百家饭而已，食之无味">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://rabbit-hole.top/2020/12/26/Hexo-Basic/disqus-add-to-site-1.jpg">
-<meta property="og:image" content="https://rabbit-hole.top/2020/12/26/Hexo-Basic/disqus-add-to-site-2.jpg">
-<meta property="og:image" content="https://rabbit-hole.top/2020/12/26/Hexo-Basic/disqus-1.jpg">
-<meta property="og:image" content="https://rabbit-hole.top/2020/12/26/Hexo-Basic/disqus-2.jpg">
-<meta property="og:image" content="https://rabbit-hole.top/2020/12/26/Hexo-Basic/GitTalk-step-1.jpg">
-<meta property="og:image" content="https://rabbit-hole.top/2020/12/26/Hexo-Basic/google-auth-1.jpg">
-<meta property="og:image" content="https://rabbit-hole.top/2020/12/26/Hexo-Basic/google-auth-2.jpg">
-<meta property="og:image" content="https://rabbit-hole.top/2020/12/26/Hexo-Basic/google-auth-3.jpg">
-<meta property="og:image" content="https://rabbit-hole.top/2020/12/26/Hexo-Basic/google-sitemap-1.jpg">
-<meta property="og:image" content="https://rabbit-hole.top/2020/12/26/Hexo-Basic/name-server.png">
-<meta property="og:image" content="https://rabbit-hole.top/2020/12/26/Hexo-Basic/name-server2.png">
-<meta property="og:image" content="https://rabbit-hole.top/2020/12/26/Hexo-Basic/dns.png">
-<meta property="og:image" content="https://rabbit-hole.top/2020/12/26/Hexo-Basic/dns2.png">
-<meta property="og:image" content="https://rabbit-hole.top/2020/12/26/Hexo-Basic/dns3.png">
+<meta property="og:image" content="https://rabbit-hole.top/disqus-add-to-site-1.jpg">
+<meta property="og:image" content="https://rabbit-hole.top/disqus-add-to-site-2.jpg">
+<meta property="og:image" content="https://rabbit-hole.top/disqus-1.jpg">
+<meta property="og:image" content="https://rabbit-hole.top/disqus-2.jpg">
+<meta property="og:image" content="https://rabbit-hole.top/GitTalk-step-1.jpg">
+<meta property="og:image" content="https://rabbit-hole.top/google-auth-1.jpg">
+<meta property="og:image" content="https://rabbit-hole.top/google-auth-2.jpg">
+<meta property="og:image" content="https://rabbit-hole.top/google-auth-3.jpg">
+<meta property="og:image" content="https://rabbit-hole.top/google-sitemap-1.jpg">
+<meta property="og:image" content="https://rabbit-hole.top/name-server.png">
+<meta property="og:image" content="https://rabbit-hole.top/name-server2.png">
+<meta property="og:image" content="https://rabbit-hole.top/dns.png">
+<meta property="og:image" content="https://rabbit-hole.top/dns2.png">
+<meta property="og:image" content="https://rabbit-hole.top/dns3.png">
 <meta property="article:published_time" content="2020-12-26T12:00:00.000Z">
 <meta property="article:modified_time" content="2021-11-02T01:43:22.761Z">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://rabbit-hole.top/2020/12/26/Hexo-Basic/disqus-add-to-site-1.jpg">
+<meta name="twitter:image" content="https://rabbit-hole.top/disqus-add-to-site-1.jpg">
 
 <link rel="canonical" href="https://rabbit-hole.top/2020/12/26/Hexo-Basic/">
 
@@ -248,7 +248,7 @@
 <p>不写类型的话默认创建文章（post），另一个常用的类型是 page，关于爱丽丝的、分类、标签页面需要这种类型（Hexo 默认不会创建这些页面哦）</p>
 <p>如果不想马上发布的话，可以创建一个 draft 草稿类型，草稿默认不会显示在博客界面中，想要在本地预览可以使用<code>hexo s --draft</code>，修改满意后可以使用<code>hexo publish 草稿名</code> 发布出去</p>
 <p>指令可以使用&amp;连接起来一次执行， <code>hexo clean &amp; hexo g &amp; hexo s</code> ，像这样会方便一些</p>
-<p>hexo 没有删除命令，想要删除文章可以直接到 source/_post 文件夹下删除.md文件，然后重新部署项目</p>
+<p>hexo 没有删除命令，想要删除文章可以直接到 source&#x2F;_post 文件夹下删除.md文件，然后重新部署项目</p>
 <p>其他部分可以参考 Hexo 的官方文档：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/writing">Hexo 官方文档</a></p>
 <h2 id="文章的撰写"><a href="#文章的撰写" class="headerlink" title="文章的撰写"></a>文章的撰写</h2><h3 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h3><p>由于文章使用 markdown 格式，所以基本的语法还是需要了解的： <a href="/2020/12/26/hello-world/" title="Markdown基础语法">Markdown基础语法</a></p>
 <h3 id="Hexo-标签"><a href="#Hexo-标签" class="headerlink" title="Hexo 标签"></a>Hexo 标签</h3><p>另外 Hexo 有一些独特的标签，比如上一段的超链接是使用这个生成的 <code>&#123;% post_link hello-world Markdown基础语法 %&#125;</code> （第二个是站内文章的.md文件名，第三个是显示的文字），这样站内链接会方便一些，不会因为修改域名一类的失效。</p>
@@ -257,11 +257,11 @@
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note <span class="selector-attr">[class]</span> <span class="selector-attr">[no-icon]</span> <span class="selector-attr">[style]</span> %&#125;</span><br><span class="line">Any <span class="attribute">content</span> (support inline tags too<span class="selector-class">.io</span>).</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
 
 <div class="note info modern">
-            <p>-class 【可選】標識，不同的標識有不同的配色 （ default / primary / success / info / warning / danger ）<br>-no-icon 【可選】不顯示 icon<br>-style 【可選】可以覆蓋配置中的 style （simple/modern/flat/disabled）</p>
+            <p>-class 【可選】標識，不同的標識有不同的配色 （ default &#x2F; primary &#x2F; success &#x2F; info &#x2F; warning &#x2F; danger ）<br>-no-icon 【可選】不顯示 icon<br>-style 【可選】可以覆蓋配置中的 style （simple&#x2F;modern&#x2F;flat&#x2F;disabled）</p>
           </div>
 
 <p>↑上面就是 info + modern 样式的</p>
-<p>另外，行内代码``括住标签会编译出错</p>
+<p>另外，行内代码&#96;&#96;括住标签会编译出错</p>
 <p>详细参考 <a target="_blank" rel="noopener" href="https://butterfly.js.org/posts/4aa8abbe/#Note-Bootstrap-Callout">Butterfly 主题的文档</a></p>
 <p>更多语法内容的可以参考这篇文章：<a target="_blank" rel="noopener" href="http://yearito.cn/posts/hexo-writing-skills.html">Hexo 搭建个人博客系列：写作技巧篇</a>，更详细一些可以参阅官方文档：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/tag-plugins">标签插件</a></p>
 <h3 id="插入资源文件"><a href="#插入资源文件" class="headerlink" title="插入资源文件"></a>插入资源文件</h3><p>还有一点是资源文件，配置文件中的相对路径是从 source 目录开始，在 _config.yml 中修改 <code>post_asset_folder: true</code> 为 true，将会在创建文章时 在 _post 目录下自动生成一个同名的资源目录，文章中的相对路径是从该资源目录开始的，所以可以把文件放在里面，然后在文章中直接 <code>![描述](文件名)</code> 调用</p>
@@ -282,12 +282,12 @@
           </div>
 
 <p>注册一个账号：<a target="_blank" rel="noopener" href="https://disqus.com/">官网</a>，随后选择第二个选项</p>
-<p><img src="disqus-add-to-site-1.jpg" alt="add-to-site-1"></p>
+<p><img src="/disqus-add-to-site-1.jpg" alt="add-to-site-1"></p>
 <p>随后填写我们的域名，默认会自动生成一个唯一标识，我们也可以自定义，这个之后会用到，分类随意选一个就好</p>
-<p><img src="disqus-add-to-site-2.jpg" alt="add-to-site-2"></p>
+<p><img src="/disqus-add-to-site-2.jpg" alt="add-to-site-2"></p>
 <p>按照官方文档的提示，在 <a target="_blank" rel="noopener" href="https://disqus.com/api/applications/">Disqus API Application</a> 处注册一个 Application</p>
-<p><img src="disqus-1.jpg" alt="创建应用"></p>
-<p><img src="disqus-2.jpg" alt="创建应用2"></p>
+<p><img src="/disqus-1.jpg" alt="创建应用"></p>
+<p><img src="/disqus-2.jpg" alt="创建应用2"></p>
 <p>然后在主题配置文件中开启 DisqusJS, 并填入我们刚才获得的标识</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="attr">use:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">DisqusJS</span></span><br><span class="line">  <span class="attr">count:</span> <span class="literal">false</span>   <span class="comment"># 不知道是什么问题，爱丽丝的机子如果设置为true会加载不出评论</span></span><br><span class="line"></span><br><span class="line"><span class="attr">disqusjs:</span></span><br><span class="line">  <span class="attr">shortname:</span></span><br><span class="line">  <span class="attr">siteName:</span></span><br><span class="line">  <span class="attr">apikey:</span></span><br><span class="line">  <span class="attr">api:</span></span><br><span class="line">  <span class="attr">nocomment:</span> <span class="comment"># display when a blog post or an article has no comment attached</span></span><br><span class="line">  <span class="attr">admin:</span></span><br><span class="line">  <span class="attr">adminLabel:</span></span><br></pre></td></tr></table></figure>
 
@@ -326,7 +326,7 @@
 <h3 id="Gitalk"><a href="#Gitalk" class="headerlink" title="Gitalk"></a>Gitalk</h3><p>这是基于 Github 的评论系统，需要一个已有或新建的仓库存放</p>
 <p>首先要创建一个 GitHub Application ,<a target="_blank" rel="noopener" href="https://github.com/settings/applications/new">点击这里申请</a>, Authorization callback URL 填写当前使用插件页面的域名</p>
 <p>然后点击这里生成一个 Client secret </p>
-<p><img src="GitTalk-step-1.jpg" alt="创建 Client secret"></p>
+<p><img src="/GitTalk-step-1.jpg" alt="创建 Client secret"></p>
 <p>修改配置文件</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="attr">client_id:</span> <span class="string">你的client</span> <span class="string">id</span> </span><br><span class="line">  <span class="attr">client_secret:</span> <span class="string">你的client</span> <span class="string">secret</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">你的github倉庫</span></span><br><span class="line">  <span class="attr">owner:</span> <span class="string">你的github用户名</span></span><br><span class="line">  <span class="attr">admin:</span> <span class="string">該倉庫的擁有者或協作者</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">zh-CN</span> <span class="comment"># en, zh-CN, zh-TW, es-ES, fr, ru</span></span><br><span class="line">  <span class="attr">perPage:</span> <span class="number">10</span> <span class="comment"># Pagination size, with maximum 100.</span></span><br><span class="line">  <span class="attr">distractionFreeMode:</span> <span class="literal">false</span> <span class="comment"># Facebook-like distraction free mode.</span></span><br><span class="line">  <span class="attr">pagerDirection:</span> <span class="string">last</span> <span class="comment"># Comment sorting direction, available values are last and first.</span></span><br><span class="line">  <span class="attr">createIssueManually:</span> <span class="literal">false</span> <span class="comment"># Gitalk will create a corresponding github issue for your every single page automatically</span></span><br></pre></td></tr></table></figure>
 
@@ -344,13 +344,13 @@
 <p>然后 <code>hexo g &amp; hexo d</code> 生成部署，就会在 public 目录下生成 sitemap.xml 文件</p>
 <h3 id="验证站点"><a href="#验证站点" class="headerlink" title="验证站点"></a>验证站点</h3><p>进入<a target="_blank" rel="noopener" href="https://search.google.com/search-console/welcome">Google Search Console</a></p>
 <p>听说 Github pages 不能使用 DNS 校验方式，所以爱丽丝选择右边的 HTML 校验</p>
-<p><img src="google-auth-1.jpg" alt="选择右边这个"></p>
-<p><img src="google-auth-2.jpg" alt="下载该文件"></p>
+<p><img src="/google-auth-1.jpg" alt="选择右边这个"></p>
+<p><img src="/google-auth-2.jpg" alt="下载该文件"></p>
 <p>下载该文件，放到 <code>themes\butterfly\source</code> 下，重新生成部署，等待一会，然后点击验证</p>
-<p><img src="google-auth-3.jpg" alt="校验成功"></p>
+<p><img src="/google-auth-3.jpg" alt="校验成功"></p>
 <p>出现校验成功界面，点击前往资源页面</p>
 <h3 id="添加站点地图"><a href="#添加站点地图" class="headerlink" title="添加站点地图"></a>添加站点地图</h3><p>点击左侧索引下的站点地图，写入我们刚才生成的站点地图文件名，然后点击提交，这样谷歌就会收录我们的博客啦！</p>
-<p><img src="google-sitemap-1.jpg" alt="添加站点地图"></p>
+<p><img src="/google-sitemap-1.jpg" alt="添加站点地图"></p>
 <p>大概等待一周左右，可以试着搜索 <code>site:自己的域名</code> 看看结果</p>
 <p>参阅自：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f8ec422ebd52">《Hexo博客提交百度和Google收录》</a></p>
 <h2 id="一些插件"><a href="#一些插件" class="headerlink" title="一些插件"></a>一些插件</h2><h3 id="字数统计"><a href="#字数统计" class="headerlink" title="字数统计"></a>字数统计</h3><p>运行 <code>npm install hexo-wordcount --save</code> 安装插件</p>
@@ -372,7 +372,7 @@
 </ul>
 <h2 id="部署到-Vercel-上加速访问速度"><a href="#部署到-Vercel-上加速访问速度" class="headerlink" title="部署到 Vercel 上加速访问速度"></a>部署到 Vercel 上加速访问速度</h2><p>参考 <a target="_blank" rel="noopener" href="https://akilar.top/posts/812734f8/">使用 Vercel 来加速 Hexo 博客</a></p>
 <h2 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h2><p>域名购买推荐 <a target="_blank" rel="noopener" href="https://www.namesilo.com/">namesilo</a> 最低一年不到十元，购买后可以参考上面 Vercel 部署中的相关内容，选中自己购买的域名，点击下图位置，把 vercel 提供的 name server 粘贴过去，点击保存，静等一会就可以啦。另外 Vercel 会自动帮我们注册 SSL 证书，着实省心不少，可以看到本网站已经使用了 https 协议。</p>
-<p><img src="name-server.png" alt="name server"><br><img src="name-server2.png" alt="name server"></p>
+<p><img src="/name-server.png" alt="name server"><br><img src="/name-server2.png" alt="name server"></p>
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DNS 是将 xxx.com 域名转换为服务器 ip 地址的服务，如果不知道 ip 地址那么浏览器就不知道该到哪请求网页了，而<span class="type">name</span> <span class="keyword">server</span> 可以理解为储存这个域名-ip 对应关系的服务器，我们访问链接时最终会到 <span class="type">name</span> <span class="keyword">server</span> 服务器进行查询</span><br></pre></td></tr></table></figure>
 
 <p>大家也可以自己添加 DNS记录（DNS Records），常见的记录类型有：</p>
@@ -380,9 +380,9 @@
 <li>A 记录，可以理解为域名-ip的对应关系，name 部分常用的有@（没有www的域名，如xxx.com）,www(带www的域名，如<a target="_blank" rel="noopener" href="http://www.xxx.com),然后全部在值的输入框中填入我们服务器的ip就可以啦/">www.xxx.com)，然后全部在值的输入框中填入我们服务器的ip就可以啦</a>.</li>
 <li>CNAME 记录，域名的别名，就是执行其他域名的域名，比如我们在 Github 和 Vercel 中自定义域名就是将我们的域名指向了 Github 和 Vercel 的域名，而我们自定义域名后再访问原来的域名也是可以看到网页的.</li>
 </ul>
-<p><img src="dns.png" alt="dns record"><br><img src="dns2.png" alt="dns recore"><br><img src="dns3.png" alt="dns recore"></p>
+<p><img src="/dns.png" alt="dns record"><br><img src="/dns2.png" alt="dns recore"><br><img src="/dns3.png" alt="dns recore"></p>
 <h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>过程中如果遇到什么问题，可以先去看看官方文档，找不到的话可以再搜索下，一般就能找到，还是不行的话可以到大佬的博客下面留言请教</p>
-<p><del>百度、谷歌收录，评论模块等爱丽丝还没开始做</del>，也许可以试着记录下来，不过可能就是有生之年了😥，希望这篇文章能帮助到像爱丽丝一样的新人吧（并不会），掰掰ヾ(•ω•`)o</p>
+<p><del>百度、谷歌收录，评论模块等爱丽丝还没开始做</del>，也许可以试着记录下来，不过可能就是有生之年了😥，希望这篇文章能帮助到像爱丽丝一样的新人吧（并不会），掰掰ヾ(•ω•&#96;)o</p>
 
     </div>
 
