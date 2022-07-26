@@ -1,0 +1,664 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Go 学习笔记 | Rubbish Bin</title><meta name="keywords" content="Go"><meta name="author"><meta name="copyright"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="GoLang 知识点随笔，学习自尚硅谷韩顺平视频课">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Go 学习笔记">
+<meta property="og:url" content="https://rabbit-hole.top/2022/05/16/Go-Learner/index.html">
+<meta property="og:site_name" content="Rubbish Bin">
+<meta property="og:description" content="GoLang 知识点随笔，学习自尚硅谷韩顺平视频课">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://rabbit-hole.top/2022/05/16/Go-Learner/cover.jpg">
+<meta property="article:published_time" content="2022-05-16T02:18:07.480Z">
+<meta property="article:modified_time" content="2022-07-26T08:45:46.938Z">
+<meta property="article:tag" content="Go">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://rabbit-hole.top/2022/05/16/Go-Learner/cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://rabbit-hole.top/2022/05/16/Go-Learner/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-07-26 16:45:46'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Rubbish Bin" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 存档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/2022/05/16/Go-Learner/cover.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Rubbish Bin</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 存档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Go 学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">更新于</span><time datetime="2022-07-26T08:45:46.938Z" title="undefined 2022-07-26 16:45:46">2022-07-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">9.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>33分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>GoLang 知识点随笔，学习自尚硅谷韩顺平视频课</p>
+<span id="more"></span>
+
+<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><p>– GOPROJECT<br>  – src<br>    – gocode<br>      – project01<br>        – package</p>
+<p>上面为Go项目的文件结构，GOPROJECT 目录需要在用户变量中设置为<code>GOPATH</code>的值，此外 Go 还需要添加 <code>GOROOT</code> 环境变量</p>
+<p>执行 <code>go build</code> 可以将源码编译为exe文件，而执行 <code>go run</code> 可以直接运行源文件，类似于脚本语言（其实是先编译再执行）<br><code>go build -o rename.exe name.go</code> 可以命名生成的可执行文件 </p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">Tips:</span></span><br><span class="line">Go 每行不需要加分号</span><br><span class="line">如果定义的变量和引入的包没有被使用，则无法通过编译</span><br></pre></td></tr></table></figure>
+
+<p>引入多个包：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;unsafe&quot;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Dos常见指令"><a href="#Dos常见指令" class="headerlink" title="Dos常见指令"></a>Dos常见指令</h3><ul>
+<li><code>dir</code> 查看当前目录</li>
+<li><code>cd dir_name</code> 移动到文件夹<ul>
+<li><code>cd D:</code> 或者直接 <code>D:</code> 移动盘符</li>
+</ul>
+</li>
+<li><code>md dir_name</code> 创建文件夹</li>
+<li><code>rd /q/s dir_name</code> 强行删除文件夹，且不询问</li>
+<li><code>echo content &gt; filename.txt</code> 将内容添加到文件中，没有文件则创建</li>
+<li><code>copy filename dir_name\re_filename</code> 拷贝文件，且可以改名</li>
+<li><code>move filename dir_name\re_filename</code> 移动文件，且可以改名</li>
+<li><code>del filename</code> 删除文件, 可以用通配符*</li>
+<li><code>cls</code> 清屏</li>
+<li><code>exit</code> 退出Dos</li>
+</ul>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>声明的三种方式：</p>
+<ol>
+<li>指定变量类型，声明后会赋默认值（0或空串） <code>var i int</code></li>
+<li>根据值自动判断变量类型 <code>var j = &quot;sss&quot;</code></li>
+<li>省略 var，但是使用 :&#x3D; 赋值，变量不能用已经声明过的 <code>name := &quot;tom&quot;</code></li>
+</ol>
+<p>同时定义多个变量： <code>var n1, n2, n3 int</code>, 变量也可以不同类型 <code>var n4, n5 = 18, &quot;hehe&quot;</code>, 也可以用 :&#x3D; 的方式</p>
+<p>全局变量：在函数外声明的变量就是全局变量,除了上面的方式外(:&#x3D;方式不行)，还可以用这种方式：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>(</span><br><span class="line">    n1 = <span class="number">100</span></span><br><span class="line">    n2 = <span class="number">200</span></span><br><span class="line">    n3 = <span class="string">&quot;tom&quot;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>用const定义，定义时必须初始化，不能修改，只能是基本数据类型</p>
+<p>const identifier [type] &#x3D; value</p>
+<p>value中不能有变量、函数等</p>
+<p>const(<br>  a &#x3D; 1<br>  b &#x3D; ‘c’<br>)</p>
+<p>a的值是0，下面每行依次加一<br>const(<br>  a &#x3D; iota<br>  b<br>  c, d<br>)&#x2F;&#x2F; 0，1，2，2</p>
+<p>首字母大写影响访问范围</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><img src="/2022/05/16/Go-Learner/pic2.png" alt="pic2"><br>uint为无符号整数</p>
+<ul>
+<li><code>fmt.Printf(&quot;%T&quot;,name)</code> 可以输出变量类型</li>
+<li>unsafe.Sizeof(name) 可以得到变量占用的字节数</li>
+<li>值类型（栈区）：int, float, bool, string, 数组, 结构体struct</li>
+<li>引用类型（堆区）：指针，slice切片，map，管道chan，interface</li>
+</ul>
+<p><code>type 别名 类型</code> 给类型起别名，但两个应该看作不同类型</p>
+<h3 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h3><p>超出范围会报错 overflow<br>有符号整数表示范围<br><img src="https://img-blog.csdnimg.cn/20190524094650601.png" alt="pic4"><br>无符号整数表示范围<br><img src="https://img-blog.csdnimg.cn/20190524102444407.png" alt="pic3"><br><img src="https://img-blog.csdnimg.cn/20190524102802340.png" alt="pic5"></p>
+<p>整形默认声明为int类型</p>
+<h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><p>float32 单精度，float64 双精度</p>
+<ol>
+<li>符号位+指数位+尾数位，可能有精度损失</li>
+<li>float64为默认声明类型</li>
+<li>可以将0.123缩写为.123，还可以用科学计数法 1.23E10, 1.23e-2</li>
+<li>用%f输出小数，使用%v不会有多余小数（如11.00000）</li>
+<li>%a.bf 会输出整数宽度为a位，小数精度为b位的浮点数</li>
+</ol>
+<h3 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h3><ol>
+<li>Go没有专用字符类型，一般用byte变量</li>
+<li>字符用单引号包裹</li>
+<li>字符串是由字节组成的，采用UTF-8编码，汉字三个字节</li>
+<li>直接输出字符，输出的是码值（’a’ -&gt; 97），使用%c可以输出字符</li>
+<li>可以将字符赋给int变量，也可以使用%c将int值转换对应码值的字符（可以用此保存中文字符等）</li>
+<li>字符类型可以进行运算，相当于一个整数</li>
+</ol>
+<h3 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h3><p>bool，占一个字节，只许取true和false，默认值为false，可以用%t输出</p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ol>
+<li>采用UTF-8编码</li>
+<li>字符串一旦赋值不可通过下标更改字符，但可以重新赋值</li>
+<li>字符串用双引号会识别转义字符,且直接换行会报错，用反引号&#96;&#96;会原样输出文本</li>
+<li>可以用加号进行拼接，换行时加号必须留在上一行末尾（Go会在行尾自动添加;）</li>
+<li>默认值为空串””</li>
+<li>用%v原值输出，用%q自带双引号</li>
+<li>可以强制转换为 []byte 、[]rune（支持中文）格式</li>
+</ol>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><ul>
+<li>数据类型必须显式转换，<code>要转类型(变量)</code>，强制转换溢出不会报错</li>
+<li>跟常量运算，结果的类型保持不变</li>
+</ul>
+<p>转换为 string：</p>
+<ul>
+<li><code>fmt.Sprintf(&quot;%t&quot;,b)</code></li>
+<li>strconv包下的函数，如 FormatInt(num, 进制), Itoa(int)</li>
+</ul>
+<p>转回基本类型：<br>strconv包下的 ParseInt()，转换失败会返回0、false</p>
+<h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><ul>
+<li>&amp;i 可以输出地址</li>
+<li><code>var s *int=&amp;i</code></li>
+<li>用*获取指针储存地址的值</li>
+</ul>
+<h3 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h3><ul>
+<li>可以使用字母数字下划线，单独用下划线命名表示省略变量</li>
+<li>包名要跟目录名保持一致</li>
+<li>变量、函数、常量要采用驼峰法 aaaBbbCcc</li>
+<li>如果变量、函数、常量名首字母大写，表示共有，可以被其他包访问(导包地址用&#x2F;，自动从gopath&#x2F;src 下查找)</li>
+<li>不能使用保留关键字作为变量名，最好不要用预定义标识符（基本数据类型、内嵌函数）作为变量名</li>
+</ul>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><ul>
+<li>10 &#x2F; 4 的结果为2，舍弃掉了小数部分不会四舍五入，需要把其中一个变成小数才能得到小数</li>
+<li>被取模数a的符号决定结果符号（a%b&#x3D;a-a&#x2F;b*b）</li>
+<li>Go只有后置++，且只能当作独立语句，不能放进表达式中</li>
+</ul>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>&amp;&amp; 和 || 都有短路机制，只要第一个为false或true，后面的就不再判断</p>
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><ul>
+<li>&lt;&lt;&#x3D; 左移后赋值</li>
+<li>^&#x3D; 按位异或后赋值</li>
+<li>&amp;&#x3D; 按位与后赋值</li>
+<li>|&#x3D; 按位或后赋值</li>
+</ul>
+<h3 id="按位运算符"><a href="#按位运算符" class="headerlink" title="按位运算符"></a>按位运算符</h3><ul>
+<li>【&lt;&lt;】 左移一位，符号位不变，低位补0</li>
+<li>【&gt;&gt;】 右移一位，符号位不变，高位补符号位</li>
+<li>^ 按位异或</li>
+<li>&amp; 按位与</li>
+<li>| 按位非</li>
+</ul>
+<p>⚠ 按位运算是通过补码运算的。正数和0的原码、反码、补码相同，负数的反码等于除符号位外取反，负数的补码等于反码+1</p>
+<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p><img src="https://img-blog.csdnimg.cn/2020050816083560.png" alt="优先级"></p>
+<h3 id="键盘输入"><a href="#键盘输入" class="headerlink" title="键盘输入"></a>键盘输入</h3><p>fmt包的 <code>Scanf(&quot;%s %t&quot;, &amp;name, &amp;isPassExam)</code> <code>Scanln(&amp;name)</code> ,参数要传地址才能修改外部变量</p>
+<p>如果类型不符，就会保持原来的值</p>
+<h3 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h3><ul>
+<li>Go 中不能直接使用用二进制，用%b输出</li>
+<li>八进制以0开头，十六进制以0x开头</li>
+<li>十转换为其他进制：除n取余，然后把每部余数倒过来</li>
+</ul>
+<h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 定义变量; 条件表达式 &#123;</span><br><span class="line">  执行代码块</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  执行代码块</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>switch 分支后不需要break，因为默认就有</li>
+<li>case后可以写多个表达式，匹配一个即可</li>
+<li>case和switch表达式数据类型保持一致</li>
+<li>case表达式，如果是常量字面量，则不能重复</li>
+<li>switch后也可以不带表达式，类似if-else，case后用条件判断表达式</li>
+<li>switch后可以定义变量，需要加分号</li>
+<li>case语句块后添加 fallthrouth 穿透语句，则会继续执行下一个case分支</li>
+<li>还可以用于判断接口指向的数据类型</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> 表达式 &#123;</span><br><span class="line">  <span class="keyword">case</span> 表达式<span class="number">1</span>, 表达式<span class="number">2</span> :</span><br><span class="line">    语句块</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    语句块</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>判断少数的具体值，switch简洁高效，，对区间和结果为bool的判断，if范围应用更广</p>
+<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><p>GO中没有while和do-while</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> 循环变量初始化；循环条件；循环遍历迭代 &#123;</span><br><span class="line">  循环语句</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>还可以去掉初始化和迭代语句，分号可以不写：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">循环变量初始化</span><br><span class="line"><span class="keyword">for</span> 循环条件 &#123;</span><br><span class="line">  循环语句</span><br><span class="line">  循环遍历迭代</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>还可以全都不写 for{循环语句} 同样可以不加分号</p>
+<p>for中还有for-range方法，可以遍历字符串和数组,这种方法字符串是按字符遍历的</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> index, val := <span class="keyword">range</span> str &#123;</span><br><span class="line">  fmt.Printf(<span class="string">&quot;%d %c&quot;</span>, index, val)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="流程控制-1"><a href="#流程控制-1" class="headerlink" title="流程控制"></a>流程控制</h3><p>在for循环前使用 label1: 设置标签，break label1 可以跳出该层循环</p>
+<p>continue结束本次循环，也可以使用标签</p>
+<p>goto label1 可以跳转到任意位置</p>
+<p>return 会退出当前函数和方法</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> 函数名<span class="params">(形参名 类型)</span> <span class="params">(返回值类型)</span>&#123;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="包"><a href="#包" class="headerlink" title="包"></a>包</h3><ol>
+<li>包的原理就是不同的文件夹，每一个文件必须属于一个包，GO以包的形式管理文件和项目目录结构</li>
+<li>导入的是文件夹路径，文件夹下有包，包名一般与目录名一致</li>
+<li>引用路径前可以写别名，但原名就不能使用了</li>
+<li>编译项目时必须要有main包</li>
+</ol>
+<h3 id="函数基本使用"><a href="#函数基本使用" class="headerlink" title="函数基本使用"></a>函数基本使用</h3><ol>
+<li>在调用函数时，会为函数分配一个新的栈（基本数据类型）空间，局部变量互相独立</li>
+<li>基本数据类型和数组、结构体是值拷贝方式传递参数</li>
+<li>函数可以返回多个值，如果不想接受用_忽略</li>
+<li>GO不支持重载</li>
+<li>函数也是数据类型，可以赋值给变量，也可以做形参，函数的数据类型为 func(参数类型) 返回值类型 <code>func(int, int) int</code></li>
+<li>接上，可以为函数类型起别名使用</li>
+<li>返回值可以命名，然后直接当变量使用，无需return特定值</li>
+<li>支持可变参数，参数名… 类型，类型是切片，可变参数只能放在最后</li>
+<li>形参可以 n1, n2 int 这样</li>
+</ol>
+<h3 id="init函数"><a href="#init函数" class="headerlink" title="init函数"></a>init函数</h3><p>每一个源文件可以包含一个，init会在main执行前被调用，但晚于全局变量定义</p>
+<p>被引入包的全局变量和init先执行</p>
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><ol>
+<li>定义时直接调用，只能用一次 <code>func(形参) 返回值&#123;&#125;(实参)</code></li>
+<li>调用时赋给变量</li>
+<li>全局匿名函数，赋给全局变量</li>
+</ol>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>一个函数和与其相关的引用组成的一个整体（比如函数和使用的外部变量，变量只初始化一次，相当于类）</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//没后缀加上后缀</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">makeSuffix</span><span class="params">(suffix <span class="keyword">string</span>)</span> <span class="title">func</span><span class="params">(<span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">(name <span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123; <span class="comment">// 返回的函数和suffix变量组成闭包</span></span><br><span class="line">		<span class="keyword">if</span> strings.HasSuffix(name, suffix) &#123;</span><br><span class="line">			<span class="keyword">return</span> name</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> name + suffix</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	f := makeSuffix(<span class="string">&quot;.jpg&quot;</span>)</span><br><span class="line">	fmt.Println(f(<span class="string">&quot;setu.jpg&quot;</span>))</span><br><span class="line">	fmt.Println(f(<span class="string">&quot;sesededongxi&quot;</span>)) <span class="comment">//suffix仍然保持原值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h3><p>在函数执行完毕后及时释放资源，比如在打开文件和数据库后马上 <code>defer file.close()</code></p>
+<p>defer存在的这行语句会入栈，函数执行完毕后按先入后出的顺序执行，defer将语句入栈时，也会将相应的值拷贝入栈</p>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>在函数外定义的是全局变量，在函数内定义的是局部变量，局部变量优先级大，在代码块if for中定义的变量外部无法调用</p>
+<p>全局变量不能用:&#x3D;形式（执行语句，等价于定义和赋值两句话）</p>
+<h3 id="常用的系统函数"><a href="#常用的系统函数" class="headerlink" title="常用的系统函数"></a>常用的系统函数</h3><h4 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h4><ol>
+<li>字符串长度 按字节，中文三个字节 len(str) </li>
+<li>将字符串转为切片，可以按字符遍历含中文字符串 []rune(str) </li>
+<li>字符串转整数 strconv.Atoi(str) </li>
+<li>整数转字符串 strconv.Itoa(int) </li>
+<li>转为byte数组 []byte(str) </li>
+<li>byte数组转字符串 string([]byte{}) </li>
+<li>将十进制转为其他进制，返回字符串 strconv.FormatInt(int, base) </li>
+<li>查找子串 strings.Contains(str, substr) </li>
+<li>统计子串数量 string.Count(str, substr) </li>
+<li>不区分大小写比较字符串相等 strings.EqualFold(str1,str2) </li>
+<li>返回子串第一次出现的位置，没有返回-1 strings.Index(str,substr) </li>
+<li>返回子串最后出现的位置 没有返回-1 string.LastIndex(str,substr)</li>
+<li>将指定的子串替换成其他子串，并返回新串 string.replace(str,before,after,n) n为替换的个数，-1全替换</li>
+<li>将字符串按某字符拆分为字符串数组 strings.Spilt(str, char)</li>
+<li>大小写转换 strings.ToLower(str) strings.ToUpper(str)</li>
+<li>去除两边空格 strings.TrimSpace(str)</li>
+<li>去除两边指定的一些字符 strings.Trim(str, sstr) 去掉左边或者右边TrimLeft TrimRight</li>
+<li>判断是否以某字符串开头结尾 strings.HasPrefix(str, substr) HasSuffix(s,ss)</li>
+</ol>
+<h4 id="时间函数"><a href="#时间函数" class="headerlink" title="时间函数"></a>时间函数</h4><ol>
+<li>获取当前这一时刻的时间，静态变量， time.Now()，返回time.Time类型</li>
+<li>通过Time类的Year()，Month(),Day(),Hour(),Minute(),Second()等函数，可以获得具体的年月日时分秒,月份可以用int()强转为数字</li>
+<li>格式化日期和时间<ol>
+<li>传统方式Printf或者Sprintf(返回字符串) 加上 %d</li>
+<li>Time类的Format(“2006-01-02 15:04:05”) 数字是固定的，可以自由组合或者省略</li>
+</ol>
+</li>
+<li>时间常量，time包中的 Nanosecond,Microsecond,Milisecond,Second,Minute,Hour等，GO以纳秒为单位,这些只能跟整数操作</li>
+<li>休眠一段时间 time.Sleep(time.Duration)</li>
+<li>获取1970.1.1到现在的时间戳，Time类的 Unix()和UnixNano()</li>
+</ol>
+<h4 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h4><p>不许导包就能使用</p>
+<ul>
+<li>len(变量) 求长度</li>
+<li>new(type) 为值类型分配内存，并返回一个指向该值的指针</li>
+<li>make 为引用类型分配内存</li>
+</ul>
+<h4 id="其他函数"><a href="#其他函数" class="headerlink" title="其他函数"></a>其他函数</h4><ul>
+<li>生成随机数：设置种子 rand.Seed(time.Now().UnixNano())，生成[0,n)的随机数 rand.Intn(n)</li>
+<li>格式化字符串：fmt.Sprintf(“%v”, 变量) 返回格式化字符串</li>
+<li>排序：sort.Ints(数组或切片)</li>
+<li>序列化 encoding&#x2F;json.Marshal(结构体) 返回byte数组和错误信息</li>
+<li>命令行参数 os.Args string切片，保存命令行输入的参数</li>
+<li>接上，可以用 flag.IntVar(target *int, commend string, defualtValue int, help string) 和 flag.StringVar() 获取 -p xx 形式的参数，然后要调用 flag.Parse()</li>
+</ul>
+<h4 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h4><p>defer 后调用错误panic处理匿名函数，recover()获取到异常</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">  err := <span class="built_in">recover</span>()</span><br><span class="line">  <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    fmt.Println(err)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;()</span><br></pre></td></tr></table></figure>
+
+<p>自定义错误：</p>
+<ol>
+<li>errors.New(“错误说明”) 会返回一个error类型的值，表示错误，一般用于发生错误时作为返回值抛出错误，调用函数时判断是否返回值并处理错误</li>
+<li>panic内置函数，接受一个空接口类型参数，可以输入error，输出错误信息并退出程序</li>
+</ol>
+<h2 id="数组和切片"><a href="#数组和切片" class="headerlink" title="数组和切片"></a>数组和切片</h2><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>数组可以存放多个同一数据类型，是值类型，数组定义时把[]放在类型前，如 [3]int，可以直接输出数组内容（因为是值类型）</p>
+<p>&amp;数组名就是第一个元素的地址，也是数组的地址，数组中元素的地址是连续的</p>
+<p>初始化方式：</p>
+<ul>
+<li>var a [3]int &#x3D; [3]int {1,2,3} &#x2F;&#x2F;可以创建空数组，或者直接省略&#x3D;后面的初始化，但是长度必须为常量</li>
+<li>var a &#x3D; [3]int {1,2,3}</li>
+<li>var a &#x3D; […]int {1,2,3}</li>
+<li>var a &#x3D; [3]int {1:1, 0:2, 2:3} &#x2F;&#x2F;指定元素对应下标</li>
+<li>a :&#x3D; [3]int {1,2,3}</li>
+</ul>
+<p>遍历</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> index, value := <span class="keyword">range</span> arr &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>index 和 value 可以改名，可以用_省略</p>
+<p>默认值按数据类型为0，false，””</p>
+<p>数组是值类型，所以传入函数中会进行值拷贝，数组间互不影响；如果想要传递引用，需要用指针，然后取值 (*arr)[0] 或者直接 arr[0]</p>
+<p>长度也是数据类型的一部分，传参时要考虑数组长度, 长度只能是常量</p>
+<h3 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h3><p>切片slice长度可变，是数组的引用，引用类型，切片定义方式 var name []int</p>
+<p>slice直接输出结果也是元素内容，而不是地址；len(slice)可求长度；切片可容纳的最大个数(容量)动态可变，可用cap(slice)求得</p>
+<p>slice底层是结构体，由元素起始地址，长度，容量三部分构成<br><img src="https://geekr.dev/wp-content/uploads/2021/01/go-slice.png" alt="切片内存结构"></p>
+<p>创建切片：</p>
+<ul>
+<li>利用已存在的数组 <code>slice := arr[0:3]</code> 引用到数组arr下标[0,3)的元素，不包含终止下标，如果开始下标为0或者结束下标为len(arr)可以省略为 arr[:3] arr[2:] arr[:]</li>
+<li><code>var slice []int = make([]int, length, cap)</code> cap可以省略</li>
+<li>直接指定数组 <code>var slice []int = []int&#123;1,3,5&#125;</code></li>
+</ul>
+<p>方法一引用已有数组，程序员可见；方法二，make创建一个数组，由切片维护，程序员不可见</p>
+<p>可以从切片切片</p>
+<p>修改切片的内容，原数组也会改变</p>
+<p>slice &#x3D; append(slice, elem1, elem2…) 向切片末尾追加元素，返回追加后的新切片（扩容还是修改长度都要修改slice结构体本身），也可以追加切片，切片名后必须带…</p>
+<p>copy(target, origin) 从一个切片拷贝切片内容，从0开始覆盖target的数组，且拷贝的内容最多只有target的len个</p>
+<p>字符串也可以切成字符串切片，字符串结构跟切片类似，但想要修改内容需要先强制类型转换为[]byte然后转回字符串,如果有中文，可以强转为 []rune （int32）切片</p>
+<h3 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h3><p>[行][列]类型，声明后默认值为0，不用必须初始化</p>
+<p>初始化方式同一维数组 <code>var arr [2][3]int = [...][3]int&#123;&#123;1,2,3&#125;, &#123;4,5,6&#125;&#125;</code></p>
+<p>for-range的value是一个一维数组</p>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>var name map[keytype]valuetype，声明不会分配内存，必须要初始化（如make）后才能使用</p>
+<p>slice、map、function等不可以用&#x3D;&#x3D;的不能当key</p>
+<p>初始化: a &#x3D; make(map[keytype]valuetype, len) &#x2F;&#x2F;len可省略<br>赋值: a[key]&#x3D;value<br>创建时初始化: var a map[key]value &#x3D; map[key]value{“a”:”b”,}</p>
+<p>重复赋值会覆盖原值，map是无序的（新版有序）</p>
+<p>delete(map, key) 如果存在则删除键值对，要一次性删除只能逐个遍历删除或者重新赋值一个空map</p>
+<p>value, findRes :&#x3D; map[key] 如果值存在，findRes为true</p>
+<p>map要用for-range遍历</p>
+<p>也可以用len()求长度</p>
+<p>map可以组成切片，能够通过append动态增加，声明长度为n说明切片中有n个需要初始化的空map</p>
+<p>map 初始化后会动态扩容，不需要向切片一样append</p>
+<h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><p>GO实现了面向对象编程OOP，struct地位与其他语言的class相同</p>
+<p>定义结构体：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Typename <span class="keyword">struct</span>&#123;</span><br><span class="line">   FieldName <span class="keyword">type</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结构体和字段首字母大写，说明可以在包外使用；首字母小写，包外不能创建对象，需要工厂函数才能正常使用</p>
+<p>结构体是值类型，复制、传参时是值拷贝</p>
+<p>结构体中字段在内存中是连续的，引用类型指向的值不一定连续</p>
+<p>值类型字段默认为零值，引用类型字段需要先make才能使用</p>
+<p>创建实例方式：</p>
+<ol>
+<li><code>var name Type</code> ，修改属性： <code>name.FieldName = &quot;emmm&quot;</code></li>
+<li><code>var name Type = Type&#123;FieldName:&quot;aaaa&quot;&#125;</code> 或者类型推导 <code>name := Type&#123;&quot;aaa&quot;,12&#125;</code> 后者初始化要按照字段定义顺序</li>
+<li><code>var name *Type = new(Type)</code> (*name).Field 或者 name.Field</li>
+<li><code>var name *Type = &amp;Type&#123;&#125;</code></li>
+</ol>
+<p>和其他结构体类型转换必须要有完全相同的字段（名字、个数、类型）</p>
+<p>可以使用type重新定义（别名），两者被认为是不同类型，但是可以强转 type newName oldName</p>
+<p>在字段加上tag，tag可以通过反射获取，便于进行序列化（将字段名小写等） Name type <code>json:&quot;name&quot;</code></p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>方法是作用在指定数据类型的，自定义类型都可以有方法，不仅限struct，int等起别名后也可以绑定方法</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//与Type类型绑定的方法，方法声明在结构体外</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(n Type)</span> <span class="title">name</span><span class="params">()</span> <span class="title">ReturnType</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法只能通过Type的实例调用，调用时会将实例也作为参数传入方法，但是值拷贝方式，无法修改外面调用的实例本身</p>
+<p>如果要使用实例的指针，func (n *Type) name(){} 需要通过地址调用：(&amp;t).name()，但也可以直接t.name()</p>
+<p>传地址效率更高</p>
+<p>如果方法指定的实例是 t Type，使用地址也可以调用 (&amp;t).method() ，但是方法内实例t仍然是值拷贝而不是指针，不影响外面的实例，反之也成立，关键是看接收者要接受的是什么。例子如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Stu <span class="keyword">struct</span> &#123;</span><br><span class="line">	Name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Stu)</span> <span class="title">test01</span><span class="params">()</span></span> &#123;</span><br><span class="line">	s.Name = <span class="string">&quot;Jack&quot;</span></span><br><span class="line">	fmt.Println(<span class="string">&quot;test01----&quot;</span>, s.Name) <span class="comment">// 值拷贝</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *Stu)</span> <span class="title">test02</span><span class="params">()</span></span> &#123;</span><br><span class="line">	(*s).Name = <span class="string">&quot;Jack&quot;</span></span><br><span class="line">	fmt.Println(<span class="string">&quot;test01----&quot;</span>, (*s).Name) <span class="comment">// 传地址</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">var</span> s Stu</span><br><span class="line">  s.Name = <span class="string">&quot;tom&quot;</span></span><br><span class="line"></span><br><span class="line">  (&amp;s).test01()</span><br><span class="line">  fmt.Println(<span class="string">&quot;main----&quot;</span>, s.Name) <span class="comment">// tom</span></span><br><span class="line"></span><br><span class="line">  s.test02()</span><br><span class="line">  fmt.Println(<span class="string">&quot;main----&quot;</span>, s.Name) <span class="comment">// jack</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>方法首字母大小写同样影响其他包访问权限</p>
+<p>如果实现了String()方法，打印时会默认调用，如果方法要求实例传指针，Print函数必须传入实例的地址</p>
+<p>可以用 t :&#x3D; &amp;T{} 创建指针并初始化</p>
+<h3 id="面向对象特性"><a href="#面向对象特性" class="headerlink" title="面向对象特性"></a>面向对象特性</h3><h4 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h4><p>定义：将字段和对字段的操作封装在一起，数据被保护在内部，程序的其他包只有通过被授权的方法才能对字段进行操作</p>
+<p>实现方法：将结构体和字段首字母小写，然后设置一个工厂模式的函数，首字母大写，然后设置首字母大写的Get和Set方法</p>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>如果一个结构体嵌套了一个匿名结构体（只写结构体名不写变量名），那么结构体就能调用匿名结构体的字段和方法（不管大小写），从而实现了继承</p>
+<p>调用匿名结构体成员： 实例.匿名结构体.成员 ；或者简写为 实例.成员，简写后编译器会先查找结构体本身，如果没有就依次查找基类，如果两者有同名字段和方法采用就近访问原则</p>
+<p>父类方法调用的是父类自己的方法和字段</p>
+<p>在包外无法继承小写结构体，也无法调用匿名结构体中的小写方法和小写字段</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Student <span class="keyword">struct</span> &#123;</span><br><span class="line">	Name  <span class="keyword">string</span></span><br><span class="line">	Age   <span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> Pupil <span class="keyword">struct</span> &#123;</span><br><span class="line">	Student <span class="comment">//继承</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果嵌入了多个匿名结构体，且有相同字段或方法，但结构体本身没有，访问时必须明确指定匿名结构体</p>
+<p>也可以在创建变量时直接对匿名结构体的字段进行赋值</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式一</span></span><br><span class="line">tv2 := TV&#123; Goods&#123;<span class="string">&quot;TV2&quot;</span>, <span class="number">9000.0</span>&#125;, Brand&#123;<span class="string">&quot;三星&quot;</span>, <span class="string">&quot;韩国&quot;</span>&#125; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//方式二</span></span><br><span class="line">tv1 := TV&#123;</span><br><span class="line">  Goods&#123;</span><br><span class="line">    Name:  <span class="string">&quot;TV1&quot;</span>,</span><br><span class="line">    price: <span class="number">4000.0</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  Brand&#123;</span><br><span class="line">    Name:    <span class="string">&quot;索尼&quot;</span>,</span><br><span class="line">    Address: <span class="string">&quot;日本&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>匿名结构体也可以用指针</p>
+<p>结构体的匿名字段类型是基本数据类型，也可以通过 变量.基本类型 调用，不能有两个同类型匿名字段</p>
+<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><p>接口定义了一组不需要实现的方法（没有方法体），并且不能包含常量。</p>
+<p>接口不需要显式的实现，自定义类型包含接口中的<strong>所有方法</strong>，就是实现了该接口。</p>
+<p>接口可以作为参数传入函数和方法。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> USB <span class="keyword">interface</span> &#123;</span><br><span class="line">	start()</span><br><span class="line">	stop()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Phone <span class="keyword">struct</span> &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(p Phone)</span> <span class="title">start</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;手机在工作！&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(p Phone)</span> <span class="title">stop</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;手机坏掉了！&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Computer <span class="keyword">struct</span> &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c Computer)</span> <span class="title">Working</span><span class="params">(usb USB)</span></span> &#123;</span><br><span class="line">	usb.start()</span><br><span class="line">	usb.stop()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	phone := Phone&#123;&#125;</span><br><span class="line">	computer := Computer&#123;&#125;</span><br><span class="line">	computer.Working(phone)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接口本身不能创建实例，但可以指向一个实现该接口的自定义类型的变量</p>
+<p>只要是自定义类型，就可以实现接口，不仅是结构体</p>
+<p>接口也可以继承其他接口（与结构体继承方式相同），实现改接口需要将其亲代接口也实现</p>
+<p>接口是引用类型，与结构体不同</p>
+<p>空接口没有方法，任何数据类型都实现了空接口，也可以把任何类型变量赋给空接口实例，空接口本身也是数据类型，可以定义变量 <code>var a interface&#123;&#125;</code></p>
+<p>不能同时继承具有相同方法名，但方法形参、返回值不同的接口</p>
+<p>如果指针类型实现了接口，那么只能将地址赋给接口变量，而不能用普通类型变量 func (a *A) method(){}  var interface Interface &#x3D; &amp;A{}</p>
+<p>实现 sort 包的 Interface 接口（len less swap三个方法），然后调用sort.Sort(Interface) 就可以对切片进行排序 swap 方法中可以直接 a,b &#x3D; b,a 互换</p>
+<p>继承有利于复用性和维护性，接口的价值在于设计规范</p>
+<h3 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h3><p>a &#x3D; b.(Type) 判断接口 b 是否指向 Type 的实例，如果是则转换为 Type 类型并赋值给a，否则会报错</p>
+<p>必须完全一致，float32 断言 float64 也会报错</p>
+<p>a, flag &#x3D; b.(Type) 可以接受转换状态，此时不会报错，程序会继续正常执行</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f <span class="keyword">float32</span> = <span class="number">1.1</span></span><br><span class="line"><span class="keyword">var</span> i <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">i = f</span><br><span class="line"><span class="keyword">if</span> nf, flag := i.(<span class="keyword">float64</span>); flag &#123;</span><br><span class="line">  fmt.Printf(<span class="string">&quot;转换成功 %T %v\n&quot;</span>, nf, nf)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  fmt.Println(<span class="string">&quot;转换失败：&quot;</span>, nf)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fmt.Println(<span class="string">&quot;继续执行&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>类型判断：a.(type) 会返回a的数据类型，但需要用switch-case进行判断</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Stu <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TypeJudge</span><span class="params">(items ...<span class="keyword">interface</span>&#123;&#125;)</span></span> &#123; <span class="comment">//可变长度参数items是切片类型</span></span><br><span class="line">	<span class="keyword">for</span> i, v := <span class="keyword">range</span> items &#123;</span><br><span class="line">		<span class="keyword">switch</span> v.(<span class="keyword">type</span>) &#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="keyword">float32</span>, <span class="keyword">float64</span>:</span><br><span class="line">        fmt.Printf(<span class="string">&quot;第%v个元素是浮点数类型,值为%v\n&quot;</span>, i, v)</span><br><span class="line">      <span class="keyword">case</span> <span class="keyword">int</span>, <span class="keyword">int32</span>, <span class="keyword">int64</span>:</span><br><span class="line">        fmt.Printf(<span class="string">&quot;第%v个元素是整数类型,值为%v\n&quot;</span>, i, v)</span><br><span class="line">      <span class="keyword">case</span> <span class="keyword">string</span>:</span><br><span class="line">        fmt.Printf(<span class="string">&quot;第%v个元素是字符串类型,值为%v\n&quot;</span>, i, v)</span><br><span class="line">      <span class="keyword">case</span> Stu:</span><br><span class="line">        fmt.Printf(<span class="string">&quot;第%v个元素是Stu类型,值为%v\n&quot;</span>, i, v)</span><br><span class="line">      <span class="keyword">case</span> *Stu:</span><br><span class="line">        fmt.Printf(<span class="string">&quot;第%v个元素是*Stu类型,值为%v\n&quot;</span>, i, v)</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        fmt.Println(<span class="string">&quot;啊这，我不知道啊&quot;</span>)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a <span class="keyword">int</span> = <span class="number">3</span></span><br><span class="line">	<span class="keyword">var</span> b <span class="keyword">float64</span> = <span class="number">2.0</span></span><br><span class="line">	<span class="keyword">var</span> c <span class="keyword">string</span> = <span class="string">&quot;嘿嘿嘿&quot;</span></span><br><span class="line">	<span class="keyword">var</span> s = Stu&#123;&#125;</span><br><span class="line">	<span class="keyword">var</span> sp = &amp;Stu&#123;&#125;</span><br><span class="line">	TypeJudge(a, b, c, s, sp, <span class="literal">true</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><p>从数据源（文件）到程序（内存）是输入流，反之是输出流</p>
+<p>打开文件： os.Open(name string) (*File, error)</p>
+<p>关闭文件 File.Close()</p>
+<p>利用缓存读文件：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">file2, err2 := os.Open(<span class="string">&quot;D:\\test.txt&quot;</span>)</span><br><span class="line"><span class="keyword">if</span> err2 != <span class="literal">nil</span> &#123;</span><br><span class="line">  fmt.Println(err2)</span><br><span class="line">  <span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">defer</span> file2.Close()</span><br><span class="line"></span><br><span class="line">reader := bufio.NewReader(file2)</span><br><span class="line"><span class="keyword">for</span> &#123;</span><br><span class="line">  str, err3 := reader.ReadString(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">  <span class="keyword">if</span> err3 == io.EOF &#123; <span class="comment">//读取到最后一行</span></span><br><span class="line">    fmt.Println(str) <span class="comment">//最后一行可能没有回车</span></span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  &#125;</span><br><span class="line">  fmt.Print(str)</span><br><span class="line">&#125;</span><br><span class="line">fmt.Println(<span class="string">&quot;文件遍历结束&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>一次性读取文件内容: byteSlice, err :&#x3D; io&#x2F;ioutil.ReadFile(filename)</p>
+<p>一次性写入文件内容: err :&#x3D; io&#x2F;ioutil.WriteFile(filename, byteSlice, perm)</p>
+<p>创建文件、写文件: os.OpenFile(namepath string, flag int, perm filemode) (file *File, err error) flag 是打开模式可以用|组合使用，perm是linux系统限定</p>
+<p>bufio.NewWriter(file) 返回writer，调用 WriteString(str)方法，最后调用Flush()方法刷新缓存</p>
+<p>判断文件是否存在: os.Sat(path) fileinfo, err 如果err为nil，则存在，如果err用  os.IsNotExist() 判断为true 则不存在，其他错误则不确定</p>
+<p>拷贝二进制文件: io.Copy(writer, reader) (written int64, err error)</p>
+<h2 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h2><p>JSON，JS对象表示法，由键值对组成 {“name”: value, “name”: [1, 2, 3]} 最外层也可以是数组 [{“name”:val}, {“name”:val2}]</p>
+<p>encoding&#x2F;json.Marshal(interface{}) ( []byte, error ) 序列化变量</p>
+<p>在定义结构体字段后加上 <code>json:&quot;name&quot;</code> 可以在序列化时指定键名，比如首字母小写</p>
+<p>反序列化: err :&#x3D; json.Unmarshal(byteSlice, *target) 反序列化时target可以不make，但必须传地址，不然改变无法保存</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>testing 框架可以实现单元测试和性能测试，然后到要测试的包下执行 go test -v 命令开始测试</p>
+<p>创建 xxx_test.go 文件，在其中定义 TestXxx(t *testing.T) 函数，如果结果成功则调用 t.Logf(str) 输出信息，否则调用 t.Fatalf(str) 输出信息</p>
+<p>测试不需要main方法，由框架调用执行测试函数</p>
+<p>测试单个文件而不是整个包:  go test -v xxx_test.go xxx.go</p>
+<p>测试单个函数: go test -v -test.run TestXxx</p>
+<h2 id="goroutine协程-channel管道"><a href="#goroutine协程-channel管道" class="headerlink" title="goroutine协程 channel管道"></a>goroutine协程 channel管道</h2><p>进程是程序在操作系统中的一次执行过程，是系统资源分配的基本单位；线程是进程的一个执行实例，是系统调度的最小单位；</p>
+<p>多线程程序在单核运行叫并发，多线程程序在多核运行叫并行</p>
+<h3 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h3><p>GO 主线程相当于程序进程，物理线程，直接作用在CPU上，消耗资源多；协程是轻量级的线程，逻辑态，消耗资源小，可以轻松开启上万个协程。</p>
+<p>协程特点：有独立的栈空间，共享程序堆空间，调度由用户控制，协程是轻量级的线程</p>
+<p>go fun1() 开启协程</p>
+<p><strong>主线程结束，协程即使没有执行完毕也会强制退出</strong></p>
+<p>MPG模式：M代表主线程（三角形），P代表协程队列的上下文环境、调度控制（正方形），G代表协程（圆形）。当M0主线程执行的G0协程阻塞（读取文件或数据库）后，会创建新的主线程M1，将M0中等待队列的协程挂到M1下执行。</p>
+<p>runtime.NumCPU() 返回当前机器的逻辑CPU数量<br>runtime.GOMAXPROCS(int) 设置最大的逻辑CPU数量</p>
+<h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><p>多个协程同时操作全局变量，要加同步锁，否则会报资源竞争错误</p>
+<p>不建议用法: 定义 sync.Mutex 类型全局变量，分别在操作前后用 Lock() Unlock() 方法上锁、解锁，主线程调用 time.sleep() 沉睡一定时间等待协程执行完毕</p>
+<p>channel管道：</p>
+<ul>
+<li>本质是一个先进先出的队列</li>
+<li>是线程安全的，多协程访问不需要加锁</li>
+<li>是有类型的，string管道只能放string类型数据</li>
+<li>是引用类型，必须make初始化后才能放数据</li>
+</ul>
+<p><code>var 变量名 chan 数据类型</code> <code>变量名 = make(chan 类型, n)</code></p>
+<p>放入数据 intChan&lt;- 10</p>
+<p>取出数据 num :&#x3D; &lt;-intChan 取时可以不用变量接收，直接扔掉</p>
+<p>存取会改变len（所以不能用普通for循环遍历），不会自动扩容，放满或者空时存取会报错，放满了可以取出再放</p>
+<p>使用内置函数close关闭管道后，只能读不能写；管道可以使用for-range遍历，但是必须关闭才能遍历，否则报错deadlock</p>
+<p>读取和写入时，如果为空或满，会检测有没有对应的发送方或者接收方，如果没有就会报死锁，如果有，则会阻塞该协程，等待对方发送或读取数据后再激活继续操作（消费者生产者模式）。关闭管道后，为空时读取不会报死锁，会返回false，告诉读取方放入结束</p>
+<p>管道可以声明为只读 var chan1 chan&lt;- int 或只写 var chan1 &lt;-chan int, 但是并没有改变数据类型。可以标注在函数参数上，防止函数内误操作</p>
+<p>如果不知道何时关闭又想遍历，可以用select。每一次select，如果1管道没有关闭，就会判断下一个case，一直到default</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">label:</span><br><span class="line"><span class="keyword">for</span>&#123;</span><br><span class="line">  <span class="keyword">select</span>&#123;</span><br><span class="line">    <span class="keyword">case</span> value := &lt;- chan1 :</span><br><span class="line">      <span class="comment">//操作</span></span><br><span class="line">    <span class="keyword">case</span> value := &lt;- chan2 :</span><br><span class="line">      <span class="comment">//操作</span></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="comment">//操作</span></span><br><span class="line">      <span class="keyword">break</span> label</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>协程中使用recover可以解决协程报错，导致主线程终止的问题</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Goroutine1</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">defer</span> fun()&#123;</span><br><span class="line">      <span class="keyword">if</span> err := <span class="built_in">recover</span>(); err!=<span class="literal">nil</span> &#123;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>反射可以在运行时动态获取变量的各种信息，如类型(Type)、类别(Kind)，对于结构体可以获取结构体本身的信息，如字段、方法等；使用反射，可以修改变量的值，可以调用关联方法</p>
+<p>reflect包实现了反射，使用TypeOf可以返回一个Type接口类型值，使用ValueOf可以返回一个Value类型值，使用Zero传入一个Type类型值，可以返回一个代表该类型零值的Value类型对象</p>
+<p>变量、interface{}、Value可以相互转换: </p>
+<ul>
+<li>interface{} -&gt; Value    v :&#x3D; reflect.ValueOf(i)</li>
+<li>value -&gt; interface{}    i :&#x3D; v.interface()</li>
+<li>interface -&gt; 变量       b :&#x3D; i.(变量类型)     类型断言</li>
+</ul>
+<p>Value类和Type接口的Kind()方法会返回kind常量，kind类别与type类型可能相同也可能不同，int类型都为int，但是结构体type为包名.类型，kind为struct</p>
+<p>Value.Int()方法可以获取int变量的值，其他类型同理，用错类型会报panic</p>
+<p>ValueOf(&amp;变量).Elem().SetInt(int) 改变变量的值,ValueOf()需要传入变量的地址&amp;，此时得到的value的类别是ptr，所以要先Elem()再改</p>
+<p>Value.Method(int)传入方法0开始的排序序号，可以获取到方法，通过Call()传入value切片作为参数，返回结果value切片</p>
+<p>Value.NumField()可以获取字段个数</p>
+<p>Value.Field(int) 可以获取该字段的Value，Type.Value(int) 可以返回该字段的 StructField，StructField.Tag.Get(“json”)可以获取之前为序列化写的Tag</p>
+<p>Value.NumMethod()可以获取方法个数</p>
+<p>Value.Method(int) 获取数量<br>Value.Method(int).Call(参数) 调用方法，参数和返回值都是Value切片，注意方法是按照名字而非定义顺序排序</p>
+<p>如果要修改地址，仍然要传入地址，且上述方法必须调用value.Elem()再调用</p>
+<p>用指针获取的Type也是指针类别，仍然要Elem()</p>
+<p>reflect.New(type)可以获取一个指向该类型的零值的指针Value，类别也是指针</p>
+<h2 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h2><p>0是保留端口，1-1024是固定端口，1025-65535是动态端口</p>
+<p>服务器监听：<br>net.Listen(“tcp”,”127.0.0.1:8888”) 返回一个Listener接口和err<br>Listener接口有Accept()方法等待连接，等待后返回Conn接口和err<br>Listener接口需要Close()</p>
+<p>客户端连结：<br>net.Dial(“tcp”,”127.0.0.1:8888”) 返回Conn接口和err<br>从终端输入数据：reader :&#x3D; bufio.NewReader(os.Stdin)<br>              str, err :&#x3D; reader.ReadString(‘\n’)<br>sendNum, err :&#x3D; conn.Write([]byte(str)) 发送给服务器</p>
+<p>服务器接受：<br>accept以后创建一个协程处理连结<br>getNum, err :&#x3D; conn.Read(buff []byte) 等待发送，如果客户端没有write，就会一直阻塞<br>fmt.Print(string(buff[:n])) 客户端发送数据包括\n<br>conn.Close() 关闭连结</p>
+<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><p>NoSQL数据库，既可以存放在内存中，又可以持久化</p>
+<p>可以存放string键值对，hash (哈希，类似于map)，list (列表，双向队列？)，set集合，zset有序集合</p>
+<p>安装好后默认有0-15共16个数据库</p>
+<p>指令：</p>
+<ul>
+<li>keys * 查看当前数据库所有键值</li>
+<li>select index 切换数据库</li>
+<li>dbsize 查看数据库数量</li>
+<li>flushdb flushall 清空所有数据库</li>
+</ul>
+<h3 id="字符串-1"><a href="#字符串-1" class="headerlink" title="字符串"></a>字符串</h3><p>strings 是二进制安全的，可以存放图片等，value最大512M</p>
+<p>指令：</p>
+<ul>
+<li>set key value 设置键值对</li>
+<li>get key 获取对应值</li>
+<li>del key 删除</li>
+<li>setex key seconds value 创建&#x2F;修改键值，同时设置有效时间</li>
+<li>expire key seconds 设置有效时间</li>
+<li>mset key value [key value key value…] 一次设置多个key-value</li>
+<li>mget key [key…] 一次获取多个值</li>
+</ul>
+<p>值有空格时要加引号包裹</p>
+<h3 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h3><p>哈希是多个字符串类型field-value对的集合</p>
+<ul>
+<li>hset key field value [field value…] 设置哈希值</li>
+<li>hget key field 获取域值</li>
+<li>hgetall key 获取所有域和值</li>
+<li>hmset key field value [field value…] 一次设置多个值</li>
+<li>hmget key field [fiedl…] 一次获取多个值</li>
+<li>hlen key 统计一个哈希有几个元素</li>
+<li>hdel key 删除哈希</li>
+</ul>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>底层为字符串链表，是有序的，值可以重复，可以从首部和尾部插入</p>
+<ul>
+<li>lpush key value [value value …] 从左插入值</li>
+<li>rpush key value … 从右插入值</li>
+<li>lrange key start stop 从start开始读取值到stop结束，下标从0开始，最后一个下标为-1，不会删除这些值</li>
+<li>lpop key 从左边读取值并删除</li>
+<li>rpop key 从右边读取值并删除</li>
+<li>del key 删除列表</li>
+<li>lindex key index 按照索引下标获取元素</li>
+<li>llen key 返回长度，没有则为0</li>
+</ul>
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><p>字符串集合，无序不重复</p>
+<ul>
+<li>sadd key value… 放入值，已有则返回0</li>
+<li>smembers key 获取所有值</li>
+<li>sismember key value 判断是否是成员</li>
+<li>srem key value 删除成员</li>
+</ul>
+<h3 id="GO-连结redis"><a href="#GO-连结redis" class="headerlink" title="GO 连结redis"></a>GO 连结redis</h3><p>安装第三方包：go get github.com&#x2F;garyburd&#x2F;redigo&#x2F;redis</p>
+<p>redis 6 新版：go get github.com&#x2F;go-redis&#x2F;redis&#x2F;v8</p>
+<p>示例：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;github.com/garyburd/redigo/redis&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	con, err := redis.Dial(<span class="string">&quot;tcp&quot;</span>, <span class="string">&quot;localhost:6379&quot;</span>)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;连结错误&quot;</span>, err)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">defer</span> con.Close()</span><br><span class="line"></span><br><span class="line">	_, err = con.Do(<span class="string">&quot;Set&quot;</span>, <span class="string">&quot;age&quot;</span>, <span class="number">18</span>)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;写入错误&quot;</span>, err)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	r, err := redis.Int(con.Do(<span class="string">&quot;Get&quot;</span>, <span class="string">&quot;age&quot;</span>)) <span class="comment">// do返回的是空接口类型</span></span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;读取错误&quot;</span>, err)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(r)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>操作哈希，只要修改具体指令即可：<br><code>con.Do(&quot;HSet&quot;, &quot;key&quot;, &quot;field&quot;, &quot;value&quot;)</code><br><code>redis.String(con.Do(&quot;HGet&quot;, &quot;key&quot;, &quot;field&quot;))</code></p>
+<p>可以使用MSet MGet 一次操作多个，使用redis.Strings()转换</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//连结数据库操作省略</span></span><br><span class="line">......</span><br><span class="line"></span><br><span class="line">_, err = con.Do(<span class="string">&quot;HMSet&quot;</span>, <span class="string">&quot;user&quot;</span>, <span class="string">&quot;name&quot;</span>, <span class="string">&quot;tom&quot;</span>, <span class="string">&quot;age&quot;</span>, <span class="number">18</span>)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">  fmt.Println(<span class="string">&quot;operation error: &quot;</span>, err)</span><br><span class="line">  <span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">r, err := redis.Strings(con.Do(<span class="string">&quot;HMGet&quot;</span>, <span class="string">&quot;user&quot;</span>, <span class="string">&quot;name&quot;</span>, <span class="string">&quot;age&quot;</span>))</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">  fmt.Println(<span class="string">&quot;operation error: &quot;</span>, err)</span><br><span class="line">  <span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> i, v := <span class="keyword">range</span> r &#123;</span><br><span class="line">  fmt.Printf(<span class="string">&quot;user[%v]=%v\n&quot;</span>, i, v)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>设置有效时间<br>_, err :&#x3D; con.Do(“expire”, “key”, seconds)</p>
+<p>操作列表<br>_, err :&#x3D; con.Do(“lpush”, “fruits”, “apple”, “banana”, “orange”, “mongo”)<br>r, err :&#x3D; redis.String(con.Do(“rpush”, “fruits”))</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Go/">Go</a></div><div class="post_share"><div class="social-share" data-image="/2022/05/16/Go-Learner/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/11/02/About-Marxism/"><img class="next-cover" src="/2021/11/02/About-Marxism/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">马克思主义随笔</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name"></div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/AliceTheBot" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hello-World"><span class="toc-number">1.</span> <span class="toc-text">Hello World</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dos%E5%B8%B8%E8%A7%81%E6%8C%87%E4%BB%A4"><span class="toc-number">1.1.</span> <span class="toc-text">Dos常见指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.2.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">1.3.</span> <span class="toc-text">常量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text">整数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text">浮点数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6"><span class="toc-number">2.3.</span> <span class="toc-text">字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.4.</span> <span class="toc-text">布尔类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">2.5.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">2.6.</span> <span class="toc-text">类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E9%92%88"><span class="toc-number">2.7.</span> <span class="toc-text">指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-number">2.8.</span> <span class="toc-text">命名规则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.</span> <span class="toc-text">运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.1.</span> <span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.2.</span> <span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.3.</span> <span class="toc-text">赋值运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.4.</span> <span class="toc-text">按位运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">3.5.</span> <span class="toc-text">优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%AE%E7%9B%98%E8%BE%93%E5%85%A5"><span class="toc-number">3.6.</span> <span class="toc-text">键盘输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E5%88%B6"><span class="toc-number">3.7.</span> <span class="toc-text">进制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-number">4.</span> <span class="toc-text">流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9"><span class="toc-number">4.1.</span> <span class="toc-text">选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF"><span class="toc-number">4.2.</span> <span class="toc-text">循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6-1"><span class="toc-number">4.3.</span> <span class="toc-text">流程控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">5.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85"><span class="toc-number">5.1.</span> <span class="toc-text">包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">5.2.</span> <span class="toc-text">函数基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#init%E5%87%BD%E6%95%B0"><span class="toc-number">5.3.</span> <span class="toc-text">init函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0"><span class="toc-number">5.4.</span> <span class="toc-text">匿名函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E5%8C%85"><span class="toc-number">5.5.</span> <span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#defer"><span class="toc-number">5.6.</span> <span class="toc-text">defer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">5.7.</span> <span class="toc-text">作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E7%B3%BB%E7%BB%9F%E5%87%BD%E6%95%B0"><span class="toc-number">5.8.</span> <span class="toc-text">常用的系统函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="toc-number">5.8.1.</span> <span class="toc-text">字符串函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0"><span class="toc-number">5.8.2.</span> <span class="toc-text">时间函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0"><span class="toc-number">5.8.3.</span> <span class="toc-text">内置函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%87%BD%E6%95%B0"><span class="toc-number">5.8.4.</span> <span class="toc-text">其他函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-number">5.8.5.</span> <span class="toc-text">错误处理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%92%8C%E5%88%87%E7%89%87"><span class="toc-number">6.</span> <span class="toc-text">数组和切片</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">6.1.</span> <span class="toc-text">数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E7%89%87"><span class="toc-number">6.2.</span> <span class="toc-text">切片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">6.3.</span> <span class="toc-text">二维数组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map"><span class="toc-number">7.</span> <span class="toc-text">Map</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-number">8.</span> <span class="toc-text">结构体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">8.1.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7"><span class="toc-number">8.2.</span> <span class="toc-text">面向对象特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%81%E8%A3%85"><span class="toc-number">8.2.1.</span> <span class="toc-text">封装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF"><span class="toc-number">8.2.2.</span> <span class="toc-text">继承</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-number">8.2.3.</span> <span class="toc-text">接口</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80"><span class="toc-number">8.3.</span> <span class="toc-text">类型断言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-number">9.</span> <span class="toc-text">文件操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-number">10.</span> <span class="toc-text">序列化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-number">11.</span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#goroutine%E5%8D%8F%E7%A8%8B-channel%E7%AE%A1%E9%81%93"><span class="toc-number">12.</span> <span class="toc-text">goroutine协程 channel管道</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8F%E7%A8%8B"><span class="toc-number">12.1.</span> <span class="toc-text">协程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E9%81%93"><span class="toc-number">12.2.</span> <span class="toc-text">管道</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84"><span class="toc-number">13.</span> <span class="toc-text">反射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B"><span class="toc-number">14.</span> <span class="toc-text">网络编程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis"><span class="toc-number">15.</span> <span class="toc-text">Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2-1"><span class="toc-number">15.1.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%88%E5%B8%8C"><span class="toc-number">15.2.</span> <span class="toc-text">哈希</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-number">15.3.</span> <span class="toc-text">列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E5%90%88"><span class="toc-number">15.4.</span> <span class="toc-text">集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GO-%E8%BF%9E%E7%BB%93redis"><span class="toc-number">15.5.</span> <span class="toc-text">GO 连结redis</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">你好哇，陌生人</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script></div></body></html>

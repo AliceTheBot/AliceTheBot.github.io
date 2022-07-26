@@ -1,15 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>废纸篓</title>
+  <title>Rubbish Bin</title>
   <icon>https://rabbit-hole.top/icon.png</icon>
-  
+  <subtitle>A container for rubbish</subtitle>
   <link href="https://rabbit-hole.top/atom.xml" rel="self"/>
   
   <link href="https://rabbit-hole.top/"/>
-  <updated>2021-11-06T16:00:00.000Z</updated>
+  <updated>2022-07-26T08:45:46.938Z</updated>
   <id>https://rabbit-hole.top/</id>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Go 学习笔记</title>
+    <link href="https://rabbit-hole.top/2022/05/16/Go-Learner/"/>
+    <id>https://rabbit-hole.top/2022/05/16/Go-Learner/</id>
+    <published>2022-05-16T02:18:07.480Z</published>
+    <updated>2022-07-26T08:45:46.938Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;GoLang 知识点随笔，学习自尚硅谷韩顺平视频课&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="https://rabbit-hole.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="Go" scheme="https://rabbit-hole.top/tags/Go/"/>
+    
+  </entry>
   
   <entry>
     <title>马克思主义随笔</title>
@@ -35,7 +54,7 @@
     <link href="https://rabbit-hole.top/2021/11/01/TIL-Change-Filename-Extension/"/>
     <id>https://rabbit-hole.top/2021/11/01/TIL-Change-Filename-Extension/</id>
     <published>2021-11-01T09:44:34.000Z</published>
-    <updated>2021-11-01T10:13:28.335Z</updated>
+    <updated>2022-07-26T08:56:38.459Z</updated>
     
     
       
@@ -81,36 +100,11 @@
   </entry>
   
   <entry>
-    <title>Git 学习笔记</title>
-    <link href="https://rabbit-hole.top/2021/01/04/Git-Learning/"/>
-    <id>https://rabbit-hole.top/2021/01/04/Git-Learning/</id>
-    <published>2021-01-04T13:42:32.144Z</published>
-    <updated>2021-11-02T01:45:17.794Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;本文系如下两篇入门教程的学习笔记 &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://backlog.com/git-tutorial/cn&quot;&gt;猴子都能懂的 GIT 入门&lt;/a&gt; &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/896043488029600&quot;&gt;廖雪峰的Git教程&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="技术" scheme="https://rabbit-hole.top/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="Git" scheme="https://rabbit-hole.top/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Hexo 搭建博客的参考资料</title>
     <link href="https://rabbit-hole.top/2020/12/26/Hexo-Basic/"/>
     <id>https://rabbit-hole.top/2020/12/26/Hexo-Basic/</id>
     <published>2020-12-26T12:00:00.000Z</published>
-    <updated>2021-11-02T01:43:22.761Z</updated>
+    <updated>2022-07-26T08:41:00.729Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
